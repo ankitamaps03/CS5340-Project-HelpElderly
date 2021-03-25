@@ -46,7 +46,7 @@ const App: React.FC = () => {
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
             </Route>
-            <Route path="/ViewHelpDetails" exact={true}>
+            <Route path="/viewHelpDetails" exact={true}>
               <ViewHelpDetails/>
             </Route>
           </IonRouterOutlet>

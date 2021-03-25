@@ -5,7 +5,7 @@ import {
     IonInput,
     IonItem,
     IonLabel,
-    IonList,
+    IonList, IonLoading,
     IonSelect,
     IonSelectOption,
     IonTextarea
@@ -20,6 +20,16 @@ const RequestHelpForm: React.FC = () => {
     const [comments, setComments] = useState<string>();
     const [when, setWhen] = useState<string>((new Date()).toString());
     let history = useHistory();
+    const [showLoading, setShowLoading] = useState(false);
+
+
+    const viewHelpDetails = () => {
+        setShowLoading(true)
+        setTimeout(() => {
+            setShowLoading(false);
+            history.push('viewHelpDetails')
+        }, 2000);
+    }
     return (
 
         <IonContent>
@@ -75,8 +85,15 @@ const RequestHelpForm: React.FC = () => {
                 </IonItem>
                 <br/>
                 <IonButton color="primary"
-                           onClick={() => history.push(`ViewHelpDetails`)}>
+                           onClick={viewHelpDetails}>
                     Place Request</IonButton>
+                <IonLoading
+                    cssClass='my-custom-class'
+                    isOpen={showLoading}
+                    onDidDismiss={() => setShowLoading(false)}
+                    message={'Please wait...'}
+                    duration={5000}
+                />
             </IonList>
         </IonContent>
     )
