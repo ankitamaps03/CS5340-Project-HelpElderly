@@ -12,13 +12,14 @@ import {
 } from "@ionic/react";
 import './RequestHelpForm.css';
 import {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const RequestHelpForm: React.FC = () => {
     const [location, setLocation] = useState<string>('1191 Boylston St, Boston MA 02215');
     const [typeOfHelp, setTypeOfHelp] = useState<string>();
     const [comments, setComments] = useState<string>();
     const [when, setWhen] = useState<string>((new Date()).toString());
-
+    let history = useHistory();
     return (
 
         <IonContent>
@@ -73,7 +74,9 @@ const RequestHelpForm: React.FC = () => {
                         onIonChange={e => setComments(e.detail.value!)}></IonTextarea>
                 </IonItem>
                 <br/>
-                <IonButton color="primary">Place Request</IonButton>
+                <IonButton color="primary"
+                           onClick={() => history.push(`ViewHelpDetails`)}>
+                    Place Request</IonButton>
             </IonList>
         </IonContent>
     )
