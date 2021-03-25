@@ -34,7 +34,7 @@ const Page: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        <HomeButtons name={name} />
+        <HomeButtons />
 
       </IonContent>
     </IonPage>

@@ -7,13 +7,13 @@ interface ContainerProps {
     name: string;
 }
 
-const HomeButtons: React.FC<ContainerProps> = () => {
+const HomeButtons: React.FC = () => {
 
     const history = useHistory();
 
     const redirect = (buttonName: number) => {
         if (buttonName === 0) {
-            history.push(`login`);
+            history.push(`requestHelp`);
         } else if (buttonName === 1) {
             history.push(`create_account`);
         }

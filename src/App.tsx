@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Login from "./pages/Login";
+import RequestHelp from "./pages/RequestHelp";
 
 const App: React.FC = () => {
   return (
@@ -40,6 +41,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/login" exact={true}>
               <Login/>
+            </Route>
+            <Route path="/requestHelp" exact={true}>
+              <RequestHelp/>
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

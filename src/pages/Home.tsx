@@ -17,7 +17,7 @@ const Home: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
 
-            <HomeButtons name={'Hello Home'} />
+            <HomeButtons />
 
         </IonContent>
     </IonPage>)
