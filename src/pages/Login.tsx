@@ -15,6 +15,7 @@ const Login: React.FC = () => {
             <IonHeader collapse="condense">
                 <IonToolbar>
                 </IonToolbar>
+
             </IonHeader>
             <IonButton
                 color="primary"
@@ -25,12 +26,17 @@ const Login: React.FC = () => {
             <div className="container">
                 <IonButton
                     color="primary"
-                   >
+                onClick={() => history.push('loginAccount')}
+                >
                     Login
                 </IonButton>
                 <br/>
                 <br/>
-                <IonButton color="primary">Create an Account</IonButton>
+                <IonButton color="primary"
+                           onClick={() => history.push('createAccount')}
+                >
+                    Create an Account
+                </IonButton>
             </div>
 
         </IonContent>

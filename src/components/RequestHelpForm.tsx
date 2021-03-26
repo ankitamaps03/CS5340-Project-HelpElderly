@@ -12,9 +12,14 @@ import {
 } from "@ionic/react";
 import './RequestHelpForm.css';
 import {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
+
 
 const RequestHelpForm: React.FC = () => {
+    let params = {
+        id: ''
+    }
+    params = useParams();
     const [location, setLocation] = useState<string>('1191 Boylston St, Boston MA 02215');
     const [typeOfHelp, setTypeOfHelp] = useState<string>();
     const [comments, setComments] = useState<string>();
@@ -22,13 +27,23 @@ const RequestHelpForm: React.FC = () => {
     let history = useHistory();
     const [showLoading, setShowLoading] = useState(false);
 
+    const isLogin : string = useParams();
 
     const viewHelpDetails = () => {
-        setShowLoading(true)
-        setTimeout(() => {
-            setShowLoading(false);
-            history.push('viewHelpDetails')
-        }, 2000);
+        if (params) {
+           if(params.id)
+           {
+               setShowLoading(true)
+               setTimeout(() => {
+                   setShowLoading(false);
+                   history.push('/viewHelpDetails')
+               }, 2000);
+           }
+           else {
+               history.push('login')
+           }
+        }
+
     }
     return (
 

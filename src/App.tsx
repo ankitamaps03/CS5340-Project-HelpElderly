@@ -26,6 +26,7 @@ import './theme/variables.css';
 import Login from "./pages/Login";
 import RequestHelp from "./pages/RequestHelp";
 import ViewHelpDetails from "./pages/ViewHelpDetails";
+import LoginAccount from "./pages/LoginAccount";
 
 const App: React.FC = () => {
   return (
@@ -46,8 +47,17 @@ const App: React.FC = () => {
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
             </Route>
+            <Route path="/requestHelp/:id" exact={true}>
+              <RequestHelp/>viewHelpDetails
+            </Route>
             <Route path="/viewHelpDetails" exact={true}>
               <ViewHelpDetails/>
+            </Route>
+            <Route path="/viewHelpDetails/:id" exact={true}>
+              <ViewHelpDetails/>
+            </Route>
+            <Route path="/loginAccount" exact={true}>
+              <LoginAccount/>
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
