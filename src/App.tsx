@@ -29,6 +29,7 @@ import ViewHelpDetails from "./pages/ViewHelpDetails";
 import LoginAccount from "./pages/LoginAccount";
 import CreateAccount from "./pages/CreateAccount";
 import ViewRequest from './components/ViewRequest';
+import RequestDetails from './components/RequestDetails';
 
 const App: React.FC = () => {
   return (
@@ -67,6 +68,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/viewRequest" exact={true}>
               <ViewRequest/>
+            </Route>
+            <Route path="/requestDetails" exact={true}>
+              <RequestDetails/>
             </Route>
             
           </IonRouterOutlet>
