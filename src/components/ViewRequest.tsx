@@ -1,8 +1,9 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonItem, IonIcon, IonLabel, IonButton } from '@ionic/react';
-import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonButton } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
 
 export const ViewRequest: React.FC = () => {
+  let history = useHistory();
   return (
     <IonPage>
       <IonHeader>
@@ -18,8 +19,8 @@ export const ViewRequest: React.FC = () => {
             Alice needs help picking up groceries at 1:45 PM on Apr 1.
         </IonCardContent>
         <div>
-          <IonButton fill="outline" slot="end">View Request</IonButton>
-          <IonButton fill="outline" slot="end">Accept Request</IonButton>
+          <IonButton fill="outline" slot="end" onClick={() =>history.push('/requestDetails')}>View Request</IonButton>
+          <IonButton fill="outline" slot="end" onClick={() =>history.push('/requestDetails')}>Accept Request</IonButton>
           <IonButton fill="outline" slot="end">Decline Request</IonButton>
         </div>
         </IonCard>
@@ -28,8 +29,8 @@ export const ViewRequest: React.FC = () => {
             Mary needs help with tech at 4 PM on Apr 5.
         </IonCardContent>
         <div>
-          <IonButton fill="outline" slot="end">View Request</IonButton>
-          <IonButton fill="outline" slot="end">Accept Request</IonButton>
+          <IonButton fill="outline" slot="end" onClick={() =>history.push('/requestDetails')}>View Request</IonButton>
+          <IonButton fill="outline" slot="end" onClick={() =>history.push('/requestDetails')}>Accept Request</IonButton>
           <IonButton fill="outline" slot="end">Decline Request</IonButton>
         </div>
       
