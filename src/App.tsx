@@ -27,6 +27,8 @@ import Login from "./pages/Login";
 import RequestHelp from "./pages/RequestHelp";
 import ViewHelpDetails from "./pages/ViewHelpDetails";
 import LoginAccount from "./pages/LoginAccount";
+import CreateAccount from "./pages/CreateAccount";
+import ViewRequest from './components/ViewRequest';
 
 const App: React.FC = () => {
   return (
@@ -44,6 +46,7 @@ const App: React.FC = () => {
             <Route path="/login" exact={true}>
               <Login/>
             </Route>
+            
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
             </Route>
@@ -59,6 +62,13 @@ const App: React.FC = () => {
             <Route path="/loginAccount" exact={true}>
               <LoginAccount/>
             </Route>
+            <Route path="/createAccount" exact={true}>
+              <CreateAccount/>
+            </Route>
+            <Route path="/viewRequest" exact={true}>
+              <ViewRequest/>
+            </Route>
+            
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
