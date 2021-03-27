@@ -15,7 +15,7 @@ const HomeButtons: React.FC = () => {
         if (buttonName === 0) {
             history.push(`requestHelp`);
         } else if (buttonName === 1) {
-            history.push(`create_account`);
+            history.push(`viewRequest`);
         }
     }
 
