@@ -46,7 +46,6 @@ const HelperDetails: React.FC = () => {
     }, [])
 
     return (
-
         <IonContent>
             <IonCard>
                 <IonCardHeader>
