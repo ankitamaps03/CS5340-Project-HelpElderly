@@ -64,6 +64,9 @@ const App: React.FC = () => {
             <Route path="/viewHelpDetails/:id" exact={true}>
               <ViewHelpDetails/>
             </Route>
+            <Route path="/viewHelpDetails/:id" exact={true}>
+              <ViewHelpDetails/>
+            </Route>
             <Route path="/loginAccount" exact={true}>
               <LoginAccount/>
             </Route>
@@ -73,10 +76,19 @@ const App: React.FC = () => {
             <Route path="/viewRequest" exact={true}>
               <ViewRequest/>
             </Route>
+            <Route path="/viewRequest/:id" exact={true}>
+              <ViewRequest/>
+            </Route>
             <Route path="/requestDetails" exact={true}>
               <RequestDetails/>
             </Route>
+            <Route path="/requestDetails/:id" exact={true}>
+              <RequestDetails/>
+            </Route>
             <Route path="/addRatingElderly" exact={true}>
+              < AddRatingElderly/>
+            </Route>
+            <Route path="/addRatingElderly/:id" exact={true}>
               < AddRatingElderly/>
             </Route>
 

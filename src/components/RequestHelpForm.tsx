@@ -27,8 +27,6 @@ const RequestHelpForm: React.FC = () => {
     let history = useHistory();
     const [showLoading, setShowLoading] = useState(false);
 
-    const isLogin : string = useParams();
-
     const viewHelpDetails = () => {
         if (params) {
            if(params.id)

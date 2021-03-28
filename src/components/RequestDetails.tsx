@@ -1,47 +1,36 @@
 import {
-  IonAvatar, IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonRow,
-  IonTitle,
-  IonToolbar
+    IonAvatar,
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCol,
+    IonContent,
+    IonGrid,
+    IonIcon,
+    IonPage,
+    IonRow
 } from "@ionic/react";
 import './RequestHelpForm.css';
-import React, {useState} from "react";
-import {checkmarkCircle, pin, star, time, chatbubble, helpBuoySharp, helpOutline, helpSharp, timeOutline, timerSharp, timerOutline} from "ionicons/icons";
+import React from "react";
+import {helpSharp, pin, timerOutline} from "ionicons/icons";
+import TopPageHeader from "./TopPageHeader";
+import {useParams} from "react-router-dom";
 
 const RequestDetails: React.FC = () => {
-  const [location, setLocation] = useState<string>('1191 Boylston St, Boston MA 02215');
-  const [typeOfHelp, setTypeOfHelp] = useState<string>();
-  const [comments, setComments] = useState<string>();
-  const [when] = useState<string>((new Date()).toString());
+    return (
+        <IonPage>
+            <IonContent>
+                <IonCard>
+                    <IonCardHeader>
+                        <IonIcon icon={pin} slot="start"/>
+                        <IonCardSubtitle>Meet Alice Hyatt at 1191 Boylston St, Boston MA 02215</IonCardSubtitle>
 
-  return (
-<IonPage>
-            <IonHeader>
-                <IonToolbar color="head">
-                    <IonTitle>Help Elderly - Request Details</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-      <IonContent>
-          <IonCard>
-              <IonCardHeader>
-                  <IonIcon icon={pin} slot="start"/>
-                  <IonCardSubtitle>Meet Alice Hyatt at 1191 Boylston St, Boston MA 02215</IonCardSubtitle>
-                  
-              </IonCardHeader>
+                    </IonCardHeader>
 
-              <IonCardContent>
-                  <IonGrid>
+                    <IonCardContent>
+                        <IonGrid>
                       <IonRow>
                           <IonCol size="2">
                               <IonAvatar>
@@ -50,11 +39,11 @@ const RequestDetails: React.FC = () => {
                               </IonAvatar>
                               <IonButton
                                   color="secondary">
-                                 Call 
+                                  Call
                               </IonButton>
                               <IonButton
                                   color="secondary">
-                                 Start Helping 
+                                  Start Helping
                               </IonButton>
                           </IonCol>
                           <IonCol>
@@ -71,8 +60,8 @@ const RequestDetails: React.FC = () => {
                               </div>
                           </IonCol>
                       </IonRow>
-                      
-                  </IonGrid>
+
+                        </IonGrid>
               </IonCardContent>
           </IonCard>
       </IonContent>

@@ -1,6 +1,6 @@
 import './HomeButtons.css';
 import {IonButton} from "@ionic/react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import React from "react";
 
 interface ContainerProps {
@@ -10,13 +10,29 @@ interface ContainerProps {
 const HomeButtons: React.FC = () => {
 
     const history = useHistory();
+    let params = {
+        id: ''
+    }
+    params = useParams();
+
+
 
     const redirect = (buttonName: number) => {
-        if (buttonName === 0) {
-            history.push(`requestHelp`);
-        } else if (buttonName === 1) {
-            history.push(`viewRequest`);
+        if (params.id) {
+            if (buttonName === 0) {
+                history.push(`requestHelp/1`);
+            } else if (buttonName === 1) {
+                history.push(`viewRequest/1`);
+            }
         }
+        else {
+            if (buttonName === 0) {
+                history.push(`requestHelp`);
+            } else if (buttonName === 1) {
+                history.push(`viewRequest`);
+            }
+        }
+
     }
 
     return (

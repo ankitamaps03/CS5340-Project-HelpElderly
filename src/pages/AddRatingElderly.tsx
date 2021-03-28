@@ -23,6 +23,8 @@ import {useHistory} from "react-router-dom";
 import React, {useState} from "react";
 // @ts-ignore
 import ReactStars from "react-rating-stars-component";
+import Header from "../components/Header";
+import TopPageHeader from "../components/TopPageHeader";
 
 const AddRatingElderly: React.FC = () => {
     let history = useHistory();
@@ -37,12 +39,7 @@ const AddRatingElderly: React.FC = () => {
     // @ts-ignore
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar color="head">
-                    <IonTitle>Login to Help Elderly</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-
+          <TopPageHeader isLogin={true} />
             <IonContent>
                 <IonCard>
                     <IonCardHeader>

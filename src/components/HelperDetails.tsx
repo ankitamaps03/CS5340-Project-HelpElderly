@@ -27,7 +27,7 @@ const HelperDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
     const redirectToRating = () => {
         setShowModal(false)
-        history.push('AddRatingElderly')
+        history.push('/AddRatingElderly/1')
     }
 
     const redirectToHome = () => {

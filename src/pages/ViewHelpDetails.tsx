@@ -5,17 +5,22 @@ import RequestHelpForm from "../components/RequestHelpForm";
 import HelperDetails from "../components/HelperDetails";
 import Header from "../components/Header";
 import {helpBuoy} from "ionicons/icons";
+import TopPageHeader from "../components/TopPageHeader";
+import {useParams} from "react-router-dom";
+import React from "react";
 
 const ViewHelpDetails: React.FC = () => {
-
+    let params = {
+        id: ''
+    }
+    params = useParams();
+    let isLogin = false;
+    if (params.id) {
+        isLogin = true;
+    }
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar color="head">
-                    <IonTitle>Help Elderly - Helper Details</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-
+            <TopPageHeader isLogin={isLogin} />
             <IonContent>
                 <Header name={"View Helper Details"} icon={helpBuoy} />
                 <HelperDetails />
