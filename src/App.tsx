@@ -41,13 +41,16 @@ const App: React.FC = () => {
             <Route path="/" exact={true}>
               <Home/>
             </Route>
+            <Route path="/:id" exact={true}>
+              <Home/>
+            </Route>
             <Route path="/page/:name" exact={true}>
               <Page />
             </Route>
             <Route path="/login" exact={true}>
               <Login/>
             </Route>
-            
+
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
             </Route>
@@ -72,7 +75,7 @@ const App: React.FC = () => {
             <Route path="/requestDetails" exact={true}>
               <RequestDetails/>
             </Route>
-            
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

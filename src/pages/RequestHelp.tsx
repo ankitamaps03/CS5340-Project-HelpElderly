@@ -1,7 +1,9 @@
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
-import HomeButtons from "../components/HomeButtons";
+import {IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar} from "@ionic/react";
 import './RequestHelp.css';
 import RequestHelpForm from "../components/RequestHelpForm";
+import {colorWand} from "ionicons/icons";
+import Header from "../components/Header";
+
 
 const RequestHelp: React.FC = () => {
 
@@ -14,10 +16,8 @@ const RequestHelp: React.FC = () => {
             </IonHeader>
 
             <IonContent>
-                <IonHeader>
-                    Request for Help
-                </IonHeader>
-                <RequestHelpForm />
+                <Header name="Request for help" icon={colorWand} />
+                <RequestHelpForm/>
             </IonContent>
         </IonPage>)
 }

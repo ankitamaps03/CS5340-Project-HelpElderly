@@ -2,6 +2,8 @@ import {IonButton, IonCheckbox, IonContent, IonInput, IonItem, IonLabel, IonList
 import './RequestHelpForm.css';
 import {useState} from "react";
 import {useHistory, useParams} from "react-router-dom";
+import {logIn} from "ionicons/icons";
+import Header from "./Header";
 
 
 const LoginForm: React.FC = () => {

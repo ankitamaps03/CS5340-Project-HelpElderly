@@ -3,6 +3,8 @@ import HomeButtons from "../components/HomeButtons";
 import './RequestHelp.css';
 import RequestHelpForm from "../components/RequestHelpForm";
 import HelperDetails from "../components/HelperDetails";
+import Header from "../components/Header";
+import {helpBuoy} from "ionicons/icons";
 
 const ViewHelpDetails: React.FC = () => {
 
@@ -15,9 +17,7 @@ const ViewHelpDetails: React.FC = () => {
             </IonHeader>
 
             <IonContent>
-                <IonHeader>
-                    Helper Details
-                </IonHeader>
+                <Header name={"View Helper Details"} icon={helpBuoy} />
                 <HelperDetails />
             </IonContent>
         </IonPage>)
