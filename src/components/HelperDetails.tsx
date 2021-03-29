@@ -14,17 +14,20 @@ import {
     IonLabel,
     IonRow
 } from "@ionic/react";
-import './RequestHelpForm.css';
+import './HelperDetails.css';
 import React, {useEffect, useState} from "react";
 import {chatbubble, checkmarkCircle, star, time} from "ionicons/icons";
 import {useHistory} from "react-router-dom";
 import Modal from "./Modal";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HelperDetails: React.FC = () => {
 
 
     let history = useHistory();
     const [showModal, setShowModal] = useState(false);
+    const [showCallerDetails, setShowCallerDetails] = useState(false);
     const redirectToRating = () => {
         setShowModal(false)
         history.push('/AddRatingElderly/1')
@@ -35,15 +38,31 @@ const HelperDetails: React.FC = () => {
         history.push('/1')
     }
 
-    useEffect(() => {
-        let timer =  setTimeout(() => {
-            setShowModal(true);
-        }, 5000);
+    const showToaster = () => {
+        setShowCallerDetails(false);
+        toast.info('Copied to the clipboard!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
 
-        return () => {
-            clearTimeout(timer);
-        };
-    }, [])
+    }
+
+    useEffect(() => {
+        if(showCallerDetails == false) {
+            let timer = setTimeout(() => {
+                setShowModal(true);
+            }, 5000);
+
+            return () => {
+                clearTimeout(timer);
+            };
+        }
+    }, [showCallerDetails])
 
     return (
         <IonContent>
@@ -56,14 +75,15 @@ const HelperDetails: React.FC = () => {
                 <IonCardContent>
                     <IonGrid>
                         <IonRow>
-                            <IonCol size="2">
+                            <IonCol size="3">
                                 <IonAvatar>
                                     <img
                                         src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
                                 </IonAvatar>
                                 <br/>
                                 <IonButton
-                                    color="secondary">
+                                    color="secondary"
+                                    onClick={() => setShowCallerDetails(true)}>
                                     Call Helper
                                 </IonButton>
                             </IonCol>
@@ -77,7 +97,7 @@ const HelperDetails: React.FC = () => {
                                     <IonIcon
                                         style={{color: 'yellow', fontSize: '20px', marginTop: '2px'}}
                                         icon={star}/>
-                                    Bob Marley has a 4.7 star rating.
+                                    Bob Marley has a 4 star rating.
                                 </div>
                             </IonCol>
                         </IonRow>
@@ -115,9 +135,30 @@ const HelperDetails: React.FC = () => {
             </IonCard>
             <Modal showModal={showModal}
                    yesAction={redirectToRating}
+                   primaryButtonText={"Yes"}
                    noAction={redirectToHome}
+                   showExtraButtons={true}
                    closeModal={() => setShowModal(false)}
                    bodyText="Bob Marley finished helping you. Do you want to rate the help provided by Bob Marley?"
+            />
+            <Modal showModal={showCallerDetails}
+                   showExtraButtons={false}
+                   primaryButtonText={"Copy to Clipboard"}
+                   yesAction={showToaster}
+                   closeModal={() => setShowCallerDetails(false)}
+                   bodyText="Phone number:+1 567 8907"
+            />
+            <ToastContainer
+
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
             />
         </IonContent>
     )

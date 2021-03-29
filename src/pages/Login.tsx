@@ -3,6 +3,8 @@ import './Login.css';
 import {useHistory, useParams} from "react-router-dom";
 import Header from "../components/Header";
 import {logIn} from "ionicons/icons";
+import ButtonForBack from "../components/ButtonForBack";
+import ButtonForHome from "../components/ButtonForHome";
 
 const Login: React.FC = () => {
     let history = useHistory();
@@ -19,12 +21,8 @@ const Login: React.FC = () => {
         </IonHeader>
 
         <IonContent fullscreen>
-            <IonButton
-                color="primary"
-                onClick={() => history.goBack()}
-            >
-                Go back
-            </IonButton>
+            <ButtonForBack />
+            <ButtonForHome />
             <div className="container">
                 <IonButton
                     color="primary"

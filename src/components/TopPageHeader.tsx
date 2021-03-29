@@ -1,41 +1,40 @@
 import {IonButton, IonButtons, IonHeader, IonIcon, IonTitle, IonToolbar} from "@ionic/react";
-import {listCircle, personCircle} from "ionicons/icons";
+import {home, listCircle, personCircle} from "ionicons/icons";
 import React from "react";
 import {useHistory} from "react-router-dom";
+import ButtonForHistory from "./ButtonForHistory";
 
 type TopPageHeaderProps = {
-    isLogin : boolean
+    isLogin : boolean,
+    showLogin?: boolean
 }
-const TopPageHeader = ({isLogin}: TopPageHeaderProps) => {
+const TopPageHeader = ({isLogin, showLogin = true}: TopPageHeaderProps) => {
 
     const history = useHistory();
     const redirectToLogin = () => {
         history.push('/loginAccount/DirectLogin')
     }
 
-    const redirectToHistory = () => {
-        history.push('/viewHistoryElderly')
-    }
+
 
     return (
         <IonHeader>
             <IonToolbar color="head">
-                { isLogin
-                && <IonButtons slot="secondary">
-                    <IonButton
-                        fill="solid"
-                        color="secondary"
-                    onClick={redirectToHistory}>
-                        View History
-                        <IonIcon slot="end" icon={listCircle}/>
-                    </IonButton>
-                    <IonButton>
-                        <IonIcon slot="icon-only" icon={personCircle}/>
-                    </IonButton>
-                    Alice Murray
-                </IonButtons>}
+
+                <IonButtons slot="secondary">
+                    {
+                        isLogin
+                        &&
+                        <div>
+                            <ButtonForHistory />
+                            <IonButton>
+                                <IonIcon slot="icon-only" icon={personCircle}/>
+                            </IonButton>
+                            Alice Murray
+                        </div>}
+                </IonButtons>
                 <IonButtons slot="primary">
-                    {!isLogin &&
+                    { showLogin && !isLogin &&
                     <IonButton
                         fill="solid"
                         color="secondary"
@@ -50,7 +49,7 @@ const TopPageHeader = ({isLogin}: TopPageHeaderProps) => {
                     </IonButton>*/}
 
                 </IonButtons>
-                <IonTitle>Help Elderly</IonTitle>
+                <IonTitle onClick={() => history.push("/1")}>Help Elderly</IonTitle>
             </IonToolbar>
         </IonHeader>)
 }

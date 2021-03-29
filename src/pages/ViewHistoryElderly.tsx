@@ -1,22 +1,22 @@
 import {
-    IonAvatar, IonButton,
+    IonAvatar,
+    IonButton,
     IonCard,
     IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle, IonCol,
+    IonCol,
     IonContent,
-    IonGrid, IonHeader,
-    IonIcon,
-    IonPage, IonRow, IonTitle, IonToolbar
+    IonGrid,
+    IonPage,
+    IonRow
 } from "@ionic/react";
 import './RequestHelp.css';
-import RequestHelpForm from "../components/RequestHelpForm";
-import {colorWand, helpSharp, pin, timerOutline} from "ionicons/icons";
+import {listCircleSharp} from "ionicons/icons";
 import Header from "../components/Header";
 import TopPageHeader from "../components/TopPageHeader";
 import React from "react";
 import {useHistory, useParams} from "react-router-dom";
-import {listCircleSharp} from "ionicons/icons";
+import ButtonForBack from "../components/ButtonForBack";
+import ButtonForHome from "../components/ButtonForHome";
 
 
 const ViewHistoryElderly: React.FC = () => {
@@ -33,35 +33,101 @@ const ViewHistoryElderly: React.FC = () => {
 
     return (
         <IonPage>
-           <TopPageHeader isLogin={true} />
+            <TopPageHeader isLogin={true}/>
             <IonContent>
-                <IonButton
-                    color="primary"
-                    onClick={() => history.goBack()}
-                >
-                    Go back
-                </IonButton>
-                <Header name={"View history"} icon={listCircleSharp} />
+                <ButtonForBack/>
+                <ButtonForHome/>
+                <Header name={"View history"} icon={listCircleSharp}/>
                 <IonCard>
-                    <IonCardContent>
-                        Alice needs help picking up groceries at 1:45 PM on Apr 1.
-                    </IonCardContent>
+                    <IonGrid>
+                        <IonRow>
+                            <IonCol size="3">
+                                <IonAvatar>
+                                    <img
+                                        src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
+                                </IonAvatar>
+                            </IonCol>
+                            <IonCol>
+                                <IonCardContent>
+                                    Bob Marley helped you with groceries on 29th March 2021, 03:00 PM (EST)
+                                </IonCardContent>
+                                <IonCardContent>
+                                    You rated the help with 4 stars.
+                                </IonCardContent>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                     <div>
-                        <IonButton fill="outline" slot="end" >View Request</IonButton>
-                        <IonButton fill="outline" slot="end" >Accept Request</IonButton>
-                        <IonButton fill="outline" slot="end">Decline Request</IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            View Request
+                        </IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            Request Help Again
+                        </IonButton>
+                    </div>
+                </IonCard>
+
+                <IonCard>
+                    <IonGrid>
+                        <IonRow>
+                            <IonCol size="3">
+                                <IonAvatar>
+                                    <img
+                                        src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
+                                </IonAvatar>
+                            </IonCol>
+                            <IonCol>
+                                <IonCardContent>
+                                    Diana Prince helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                </IonCardContent>
+                                <IonCardContent>
+                                    You rated the help with 5 stars.
+                                </IonCardContent>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
+                    <div>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            View Request
+                        </IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            Request Help Again
+                        </IonButton>
                     </div>
                 </IonCard>
                 <IonCard>
-                    <IonCardContent>
-                        Mary needs help with tech at 4 PM on Apr 5.
-                    </IonCardContent>
+                    <IonGrid>
+                        <IonRow>
+                            <IonCol size="3">
+                                <IonAvatar>
+                                    <img
+                                        src="https://c8.alamy.com/comp/2ATH5M7/colourful-male-face-circle-in-flat-style-cartoon-vector-icon-modern-design-men-face-person-silhouette-avatar-profile-round-portrait-isolated-2ATH5M7.jpg"/>
+                                </IonAvatar>
+                            </IonCol>
+                            <IonCol>
+                                <IonCardContent>
+                                    Tony Stark helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                </IonCardContent>
+                                <IonCardContent>
+                                    You rated the help with 5 stars.
+                                </IonCardContent>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                     <div>
-                        <IonButton fill="outline" slot="end">View Request</IonButton>
-                        <IonButton fill="outline" slot="end" >Accept Request</IonButton>
-                        <IonButton fill="outline" slot="end">Decline Request</IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            View Request
+                        </IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary">
+                            Request Help Again
+                        </IonButton>
                     </div>
-
                 </IonCard>
             </IonContent>
         </IonPage>

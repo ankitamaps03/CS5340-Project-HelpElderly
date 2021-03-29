@@ -4,13 +4,15 @@ import './Modal.css'
 
 type ModalProps = {
     showModal: boolean
-    yesAction: () => void,
-    noAction: () => void,
+    yesAction?: () => void,
+    noAction?: () => void,
     closeModal: () => void,
-    bodyText: string
+    bodyText: string,
+    showExtraButtons: boolean,
+    primaryButtonText: string
 }
 
-const Modal = ({yesAction, noAction, showModal, closeModal, bodyText}: ModalProps) => {
+const Modal = ({showExtraButtons = false, yesAction, primaryButtonText, noAction, showModal, closeModal, bodyText}: ModalProps) => {
 
 
     return (
@@ -18,18 +20,24 @@ const Modal = ({yesAction, noAction, showModal, closeModal, bodyText}: ModalProp
             showBackdrop
             isOpen={showModal}
             cssClass='my-custom-class'>
-            <IonButton onClick={() => closeModal}>Close Modal</IonButton>
-            <p>{bodyText}</p>
+            <IonButton
+                style={{width: "28%"}}
+                onClick={closeModal}>Close</IonButton>
+            <div style={{height: "100%"}}>{bodyText}</div>
+
             <IonGrid>
                 <IonRow>
                     <IonCol size="6">
-                        <IonButton onClick={yesAction}>Yes</IonButton>
+                        <IonButton onClick={yesAction}>{primaryButtonText}</IonButton>
                     </IonCol>
+                    {showExtraButtons &&
                     <IonCol>
                         <IonButton onClick={noAction}>No</IonButton>
                     </IonCol>
+                    }
                 </IonRow>
             </IonGrid>
+
         </IonModal>
     )
 }

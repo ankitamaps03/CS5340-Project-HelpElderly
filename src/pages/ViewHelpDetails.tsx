@@ -8,6 +8,7 @@ import {helpBuoy} from "ionicons/icons";
 import TopPageHeader from "../components/TopPageHeader";
 import {useParams} from "react-router-dom";
 import React from "react";
+import ButtonForHome from "../components/ButtonForHome";
 
 const ViewHelpDetails: React.FC = () => {
     let params = {
@@ -21,8 +22,10 @@ const ViewHelpDetails: React.FC = () => {
     return (
         <IonPage>
             <TopPageHeader isLogin={isLogin} />
+
             <IonContent>
                 <Header name={"View Helper Details"} icon={helpBuoy} />
+                <ButtonForHome />
                 <HelperDetails />
             </IonContent>
         </IonPage>)

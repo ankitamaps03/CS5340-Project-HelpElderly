@@ -25,6 +25,8 @@ import React, {useState} from "react";
 import ReactStars from "react-rating-stars-component";
 import Header from "../components/Header";
 import TopPageHeader from "../components/TopPageHeader";
+import ButtonForHome from "../components/ButtonForHome";
+import ButtonForBack from "../components/ButtonForBack";
 
 const AddRatingElderly: React.FC = () => {
     let history = useHistory();
@@ -41,7 +43,9 @@ const AddRatingElderly: React.FC = () => {
         <IonPage>
           <TopPageHeader isLogin={true} />
             <IonContent>
-                <IonCard>
+                <ButtonForBack />
+                <ButtonForHome />
+                <IonCard style={{height: "100%"}}>
                     <IonCardHeader>
                         <IonCardSubtitle>Rate the help service provided.</IonCardSubtitle>
                         <IonCardTitle>Rate Bob Marley</IonCardTitle>
@@ -49,7 +53,7 @@ const AddRatingElderly: React.FC = () => {
                     <IonCardContent>
                         <IonGrid>
                             <IonRow>
-                                <IonCol size="2">
+                                <IonCol size="3">
                                     <IonAvatar>
                                         <img
                                             src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
@@ -82,7 +86,7 @@ const AddRatingElderly: React.FC = () => {
 
                         </IonCardContent>
                         <IonRow>
-                            <IonCol size='9'>
+                            <IonCol size='6'>
                                 <IonButton
                                     onClick={redirectToHome}
                                     color="primary">
