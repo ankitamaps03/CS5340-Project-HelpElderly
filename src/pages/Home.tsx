@@ -30,13 +30,7 @@ const Home: React.FC = () => {
     return (<IonPage>
         <TopPageHeader isLogin={isLogin} />
         <IonContent fullscreen>
-            <IonHeader collapse="condense">
-                <IonToolbar>
-                </IonToolbar>
-            </IonHeader>
-
             <HomeButtons />
-
         </IonContent>
     </IonPage>)
 }

@@ -51,6 +51,9 @@ const App: React.FC = () => {
             <Route path="/login" exact={true}>
               <Login/>
             </Route>
+            <Route path="/login/:name" exact={true}>
+              <Login/>
+            </Route>
 
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
@@ -68,6 +71,9 @@ const App: React.FC = () => {
               <ViewHelpDetails/>
             </Route>
             <Route path="/loginAccount" exact={true}>
+              <LoginAccount/>
+            </Route>
+            <Route path="/loginAccount/:name" exact={true}>
               <LoginAccount/>
             </Route>
             <Route path="/createAccount" exact={true}>

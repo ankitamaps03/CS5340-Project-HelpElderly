@@ -1,11 +1,16 @@
 import {IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
 import './Login.css';
-import { useHistory } from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import Header from "../components/Header";
 import {logIn} from "ionicons/icons";
 
 const Login: React.FC = () => {
     let history = useHistory();
+    let params = {
+        name: ''
+    }
+    params = useParams();
+    console.log({params})
     return (<IonPage>
         <IonHeader>
             <IonToolbar color="head">
@@ -23,7 +28,7 @@ const Login: React.FC = () => {
             <div className="container">
                 <IonButton
                     color="primary"
-                onClick={() => history.push('loginAccount')}
+                onClick={() => history.push(`/loginAccount/${params.name}`)}
                 >
                     Login
                 </IonButton>

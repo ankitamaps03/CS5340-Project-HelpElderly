@@ -1,9 +1,7 @@
-import {IonButton, IonCheckbox, IonContent, IonInput, IonItem, IonLabel, IonList, IonLoading} from "@ionic/react";
+import {IonButton, IonCheckbox, IonInput, IonItem, IonLabel, IonList, IonLoading} from "@ionic/react";
 import './RequestHelpForm.css';
 import {useState} from "react";
 import {useHistory, useParams} from "react-router-dom";
-import {logIn} from "ionicons/icons";
-import Header from "./Header";
 
 
 const LoginForm: React.FC = () => {
@@ -13,14 +11,21 @@ const LoginForm: React.FC = () => {
 
     let history = useHistory();
     const [showLoading, setShowLoading] = useState(false);
-
-    const redirectToHelper = () => {
-        setShowLoading(true)
-        setTimeout(() => {
-            setShowLoading(false);
-            history.push('/viewHelpDetails/1')
-        }, 2000);
-
+    let params = {
+        name: ''
+    }
+    params = useParams();
+    const redirect = () => {
+        console.log(params)
+        if (params.name == "DirectLogin") {
+            history.push("/requestHelp/1")
+        } else if (params.name == "RequestHelp") {
+            setShowLoading(true)
+            setTimeout(() => {
+                setShowLoading(false);
+                history.push('/viewHelpDetails/1')
+            }, 2000);
+        }
     }
     return (
         <div>
@@ -56,8 +61,7 @@ const LoginForm: React.FC = () => {
                 </div>
                 <br/>
                 <IonButton color="primary"
-                           onClick={redirectToHelper}>
-
+                           onClick={redirect}>
                     Login
                 </IonButton>
                 <IonLoading

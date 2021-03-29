@@ -38,7 +38,7 @@ const RequestHelpForm: React.FC = () => {
                }, 2000);
            }
            else {
-               history.push('login')
+               history.push('/login/RequestHelp')
            }
         }
 
