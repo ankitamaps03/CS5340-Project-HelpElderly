@@ -1,5 +1,5 @@
 import {IonButton, IonButtons, IonHeader, IonIcon, IonTitle, IonToolbar} from "@ionic/react";
-import {helpCircle, personCircle} from "ionicons/icons";
+import {listCircle, personCircle} from "ionicons/icons";
 import React from "react";
 import {useHistory} from "react-router-dom";
 
@@ -10,13 +10,25 @@ const TopPageHeader = ({isLogin}: TopPageHeaderProps) => {
 
     const history = useHistory();
     const redirectToLogin = () => {
-        history.push('/login/DirectLogin')
+        history.push('/loginAccount/DirectLogin')
+    }
+
+    const redirectToHistory = () => {
+        history.push('/viewHistoryElderly')
     }
 
     return (
         <IonHeader>
             <IonToolbar color="head">
-                {isLogin && <IonButtons slot="secondary">
+                { isLogin
+                && <IonButtons slot="secondary">
+                    <IonButton
+                        fill="solid"
+                        color="secondary"
+                    onClick={redirectToHistory}>
+                        View History
+                        <IonIcon slot="end" icon={listCircle}/>
+                    </IonButton>
                     <IonButton>
                         <IonIcon slot="icon-only" icon={personCircle}/>
                     </IonButton>
@@ -30,12 +42,13 @@ const TopPageHeader = ({isLogin}: TopPageHeaderProps) => {
                         onClick={redirectToLogin}
                     >
                         Login
-                        </IonButton>
+                    </IonButton>
                     }
-                    <IonButton fill="solid" color="secondary">
+                    {/*<IonButton fill="solid" color="secondary">
                         Help
                         <IonIcon slot="end" icon={helpCircle}/>
-                    </IonButton>
+                    </IonButton>*/}
+
                 </IonButtons>
                 <IonTitle>Help Elderly</IonTitle>
             </IonToolbar>

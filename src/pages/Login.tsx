@@ -35,7 +35,7 @@ const Login: React.FC = () => {
                 <br/>
                 <br/>
                 <IonButton color="primary"
-                           onClick={() => history.push('createAccount')}
+                           onClick={() => history.push('/createAccount')}
                 >
                     Create an Account
                 </IonButton>

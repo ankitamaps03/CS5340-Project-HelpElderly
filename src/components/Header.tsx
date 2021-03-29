@@ -8,7 +8,7 @@ type HeaderProps ={
 const Header = ({name, icon}: HeaderProps) => {
     return (
         <div>
-            <IonIcon style={{width: "5%", float: "left", marginTop: "7px"}}
+            <IonIcon style={{width: "5%", float: "left", marginTop: "5px" , fontSize: "20px"}}
                      icon={icon}/>
             <h2>{name}</h2>
         </div>)

@@ -31,6 +31,7 @@ import CreateAccount from "./pages/CreateAccount";
 import ViewRequest from './components/ViewRequest';
 import RequestDetails from './components/RequestDetails';
 import AddRatingElderly from "./pages/AddRatingElderly";
+import ViewHistoryElderly from "./pages/ViewHistoryElderly";
 
 const App: React.FC = () => {
   return (
@@ -97,7 +98,9 @@ const App: React.FC = () => {
             <Route path="/addRatingElderly/:id" exact={true}>
               < AddRatingElderly/>
             </Route>
-
+            <Route path="/viewHistoryElderly" exact={true}>
+              < ViewHistoryElderly/>
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
