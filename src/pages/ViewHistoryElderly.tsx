@@ -49,7 +49,7 @@ const ViewHistoryElderly: React.FC = () => {
                             </IonCol>
                             <IonCol>
                                 <IonCardContent>
-                                    Bob Marley helped you with groceries on 29th March 2021, 03:00 PM (EST)
+                                    <strong>Bob Marley</strong> helped you with groceries on 29th March 2021, 03:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
                                     You rated the help with 4 stars.
@@ -60,11 +60,12 @@ const ViewHistoryElderly: React.FC = () => {
                     <div>
                         <IonButton fill="solid"
                                    color="secondary"
-                                   onClick={() =>history.push('/requestDetails')}>
-                            View Request
+                                   onClick={() => history.push('/helpProvided')}>
+                            View Help
                         </IonButton>
                         <IonButton fill="solid"
-                                   color="secondary">
+                                   color="secondary"
+                                   onClick={() => history.push('/requestHelp/1/groceries')}>
                             Request Help Again
                         </IonButton>
                     </div>
@@ -84,7 +85,7 @@ const ViewHistoryElderly: React.FC = () => {
                                     Diana Prince helped you with technology related work on 23th March 2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the help with 5 stars.
+                                    You have not rated this help.
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
@@ -92,12 +93,18 @@ const ViewHistoryElderly: React.FC = () => {
                     <div>
                         <IonButton fill="solid"
                                    color="secondary"
-                                   onClick={() =>history.push('/requestDetails')}>
-                            View Request
+                                   onClick={() => history.push('/helpProvided')}>
+                            View Help
                         </IonButton>
                         <IonButton fill="solid"
-                                   color="secondary">
+                                   color="secondary"
+                                   onClick={() => history.push('/requestHelp/1/groceries')}>
                             Request Help Again
+                        </IonButton>
+                        <IonButton fill="solid"
+                                   color="secondary"
+                                   onClick={() => history.push('/addRatingElderlyWoman')}>
+                            Rate
                         </IonButton>
                     </div>
                 </IonCard>
@@ -123,8 +130,8 @@ const ViewHistoryElderly: React.FC = () => {
                     <div>
                         <IonButton fill="solid"
                                    color="secondary"
-                                   onClick={() =>history.push('/requestDetails')}>
-                            View Request
+                                   onClick={() => history.push('/helpProvided')}>
+                            View Help
                         </IonButton>
                         <IonButton fill="solid"
                                    color="secondary">

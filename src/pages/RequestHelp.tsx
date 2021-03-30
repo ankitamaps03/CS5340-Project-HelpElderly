@@ -13,7 +13,8 @@ import ButtonForBack from "../components/ButtonForBack";
 const RequestHelp: React.FC = () => {
 
     let params = {
-        id: ''
+        id: '',
+        help: ''
     }
     params = useParams();
     let isLogin = false;

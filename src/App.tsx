@@ -32,6 +32,8 @@ import ViewRequest from './components/ViewRequest';
 import RequestDetails from './components/RequestDetails';
 import AddRatingElderly from "./pages/AddRatingElderly";
 import ViewHistoryElderly from "./pages/ViewHistoryElderly";
+import HelpProvided from "./pages/HelpProvided";
+import AddRatingElderlyWoman from "./pages/AddRatingElderlyWoman";
 
 const App: React.FC = () => {
   return (
@@ -60,7 +62,10 @@ const App: React.FC = () => {
               <RequestHelp/>
             </Route>
             <Route path="/requestHelp/:id" exact={true}>
-              <RequestHelp/>viewHelpDetails
+              <RequestHelp/>
+            </Route>
+            <Route path="/requestHelp/:id/:help" exact={true}>
+              <RequestHelp/>
             </Route>
             <Route path="/viewHelpDetails" exact={true}>
               <ViewHelpDetails/>
@@ -98,9 +103,20 @@ const App: React.FC = () => {
             <Route path="/addRatingElderly/:id" exact={true}>
               < AddRatingElderly/>
             </Route>
+            <Route path="/addRatingElderlyWoman" exact={true}>
+              < AddRatingElderlyWoman/>
+            </Route>
+            <Route path="/addRatingElderlyWoman/1" exact={true}>
+              < AddRatingElderlyWoman/>
+            </Route>
             <Route path="/viewHistoryElderly" exact={true}>
               < ViewHistoryElderly/>
             </Route>
+            <Route path="/helpProvided" exact={true}>
+              <HelpProvided />
+            </Route>
+
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

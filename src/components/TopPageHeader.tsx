@@ -1,4 +1,4 @@
-import {IonButton, IonButtons, IonHeader, IonIcon, IonTitle, IonToolbar} from "@ionic/react";
+import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar} from "@ionic/react";
 import {home, listCircle, personCircle} from "ionicons/icons";
 import React from "react";
 import {useHistory} from "react-router-dom";
@@ -31,7 +31,9 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                             <IonButton>
                                 <IonIcon slot="icon-only" icon={personCircle}/>
                             </IonButton>
+                            <IonLabel>
                             Alice Murray
+                            </IonLabel>
                         </div>}
                 </IonButtons>
                 <IonButtons slot="primary">

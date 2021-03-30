@@ -40,7 +40,7 @@ const RequestDetails: React.FC = () => {
                                 <IonCol size="3">
                                     <IonAvatar>
                                         <img
-                                            src="https://d338t8kmirgyke.cloudfront.net/icons/icon_pngs/000/006/242/original/old-woman.png"/>
+                                            src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
                                 </IonCol>
                                 <IonCol>

@@ -17,7 +17,8 @@ import {useHistory, useParams} from "react-router-dom";
 
 const RequestHelpForm: React.FC = () => {
     let params = {
-        id: ''
+        id: '',
+        help: ''
     }
     params = useParams();
     const [location, setLocation] = useState<string>('1191 Boylston St, Boston MA 02215');
@@ -66,8 +67,9 @@ const RequestHelpForm: React.FC = () => {
                     >Type of help *: </IonLabel>
                     <IonSelect placeholder="Enter the type of help."
                                value={typeOfHelp}
+                               selectedText="Grocery pickup"
                                onIonChange={e => setTypeOfHelp(e.detail.value!)}>
-                        <IonSelectOption value="groceryPickup">Grocery pickup</IonSelectOption>
+                        <IonSelectOption  value="groceryPickup">Grocery pickup</IonSelectOption>
                         <IonSelectOption value="dropMe">Drop me</IonSelectOption>
                         <IonSelectOption value="houseCleaning">House cleaning</IonSelectOption>
                         <IonSelectOption value="technicalHelp">Technical help</IonSelectOption>
