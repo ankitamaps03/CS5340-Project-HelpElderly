@@ -6,9 +6,10 @@ import ButtonForHistory from "./ButtonForHistory";
 
 type TopPageHeaderProps = {
     isLogin : boolean,
-    showLogin?: boolean
+    showLogin?: boolean,
+    showViewHistory?: boolean
 }
-const TopPageHeader = ({isLogin, showLogin = true}: TopPageHeaderProps) => {
+const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopPageHeaderProps) => {
 
     const history = useHistory();
     const redirectToLogin = () => {
@@ -26,7 +27,7 @@ const TopPageHeader = ({isLogin, showLogin = true}: TopPageHeaderProps) => {
                         isLogin
                         &&
                         <div>
-                            <ButtonForHistory />
+                            { showViewHistory && <ButtonForHistory />}
                             <IonButton>
                                 <IonIcon slot="icon-only" icon={personCircle}/>
                             </IonButton>

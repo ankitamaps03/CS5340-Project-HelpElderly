@@ -33,11 +33,11 @@ const ViewHistoryElderly: React.FC = () => {
 
     return (
         <IonPage>
-            <TopPageHeader isLogin={true}/>
+            <TopPageHeader isLogin={true} showViewHistory={false}/>
             <IonContent>
                 <ButtonForBack/>
                 <ButtonForHome/>
-                <Header name={"View history"} icon={listCircleSharp}/>
+                <Header name={"View history for requested help"} icon={listCircleSharp}/>
                 <IonCard>
                     <IonGrid>
                         <IonRow>
@@ -59,7 +59,8 @@ const ViewHistoryElderly: React.FC = () => {
                     </IonGrid>
                     <div>
                         <IonButton fill="solid"
-                                   color="secondary">
+                                   color="secondary"
+                                   onClick={() =>history.push('/requestDetails')}>
                             View Request
                         </IonButton>
                         <IonButton fill="solid"
@@ -90,7 +91,8 @@ const ViewHistoryElderly: React.FC = () => {
                     </IonGrid>
                     <div>
                         <IonButton fill="solid"
-                                   color="secondary">
+                                   color="secondary"
+                                   onClick={() =>history.push('/requestDetails')}>
                             View Request
                         </IonButton>
                         <IonButton fill="solid"
@@ -120,7 +122,8 @@ const ViewHistoryElderly: React.FC = () => {
                     </IonGrid>
                     <div>
                         <IonButton fill="solid"
-                                   color="secondary">
+                                   color="secondary"
+                                   onClick={() =>history.push('/requestDetails')}>
                             View Request
                         </IonButton>
                         <IonButton fill="solid"
