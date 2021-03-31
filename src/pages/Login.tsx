@@ -12,7 +12,6 @@ const Login: React.FC = () => {
         name: ''
     }
     params = useParams();
-    console.log({params})
     return (<IonPage>
         <IonHeader>
             <IonToolbar color="head">

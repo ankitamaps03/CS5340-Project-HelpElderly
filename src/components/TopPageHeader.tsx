@@ -1,22 +1,27 @@
-import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar} from "@ionic/react";
-import {home, listCircle, personCircle} from "ionicons/icons";
-import React from "react";
+import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonPopover, IonTitle, IonToolbar} from "@ionic/react";
+import {personCircle} from "ionicons/icons";
+import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import ButtonForHistory from "./ButtonForHistory";
 
 type TopPageHeaderProps = {
-    isLogin : boolean,
+    isLogin: boolean,
     showLogin?: boolean,
     showViewHistory?: boolean
 }
 const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopPageHeaderProps) => {
 
     const history = useHistory();
+    const [popoverState, setShowPopover] = useState({showPopover: false, event: undefined});
+
     const redirectToLogin = () => {
         history.push('/loginAccount/DirectLogin')
     }
 
-
+    const logout = (event: any) => {
+        setShowPopover({showPopover: false, event: event});
+        history.push('/')
+    }
 
     return (
         <IonHeader>
@@ -27,12 +32,34 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                         isLogin
                         &&
                         <div>
-                            { showViewHistory && <ButtonForHistory />}
-                            <IonButton>
+                            <IonPopover
+                                cssClass='my-custom-class'
+                                event={popoverState.event}
+                                isOpen={popoverState.showPopover}
+                                onDidDismiss={() => setShowPopover({showPopover: false, event: undefined})}
+                            >
+                                <IonButton
+                                    style={{width: "100%"}}
+                                    onClick={(e : any) => {logout(e)}}>
+                                    Logout
+                                </IonButton>
+                            </IonPopover>
+                            {showViewHistory && <ButtonForHistory/>}
+                            <IonButton
+                                onClick={
+                                    (e: any) => {
+                                        e.persist();
+                                        setShowPopover({showPopover: true, event: e})
+                                    }}>
                                 <IonIcon slot="icon-only" icon={personCircle}/>
                             </IonButton>
-                            <IonLabel>
-                            Alice Murray
+                            <IonLabel
+                                onClick={
+                                    (e: any) => {
+                                        e.persist();
+                                        setShowPopover({showPopover: true, event: e})
+                                    }}>
+                                Alice Murray
                             </IonLabel>
                         </div>}
                 </IonButtons>

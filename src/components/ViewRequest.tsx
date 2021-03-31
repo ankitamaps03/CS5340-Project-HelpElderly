@@ -1,15 +1,15 @@
 import {
     IonAlert,
-  IonAvatar,
-  IonButton,
-  IonCard,
-  IonCardContent,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonItem,
-  IonPage,
-  IonRow
+    IonAvatar,
+    IonButton,
+    IonCard,
+    IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,
+    IonCol,
+    IonContent,
+    IonGrid,
+    IonItem,
+    IonPage,
+    IonRow
 } from "@ionic/react";
 import {book} from "ionicons/icons";
 import Header from "./Header";
@@ -36,6 +36,7 @@ const ViewRequest: React.FC = () => {
   if (params.id) {
       isLogin = true;
   }
+
   const hideAcceptButton = (id: number) =>{
     var x = document.getElementById("requestButtons"+id);
     if(x!=null){
@@ -63,20 +64,29 @@ const ViewRequest: React.FC = () => {
     showAcceptedMessage(id)
   };
   const redirectToRequestDetail =()=>{
-    
-        setShowModal1(false)
-        history.push('/requestDetails')
-    
+        if(params.id) {
+            setShowModal1(false)
+            history.push('/requestDetails')
+        }
+        else{
+            setShowModal1(false)
+            history.push('/login/helper')
+        }
+
   }
   return (
       <IonPage>
-          <TopPageHeader isLogin={true} showViewHistory={false}/>
+          <TopPageHeader isLogin={isLogin} showViewHistory={false}/>
           <IonContent>
               <ButtonForBack/>
               <ButtonForHome/>
               <Header name={"View Requests"} icon={book}/>
               <IonCard>
+                  <IonCardHeader>
+                      <IonCardTitle>Alice needs help picking up groceries on 4th of April 2021, 04:00PM (EST).</IonCardTitle>
+                  </IonCardHeader>
                   <IonGrid>
+
                       <IonRow>
                           <IonCol size="3">
                               <IonAvatar>
@@ -85,9 +95,6 @@ const ViewRequest: React.FC = () => {
                               </IonAvatar>
                           </IonCol>
                           <IonCol>
-                              <IonCardContent>
-                              Alice needs help picking up groceries on 4th of April 2021, 04:00PM (EST).
-                              </IonCardContent>
                               <IonCardContent>
                                   Location: 1191 Boylston street, Boston
                               </IonCardContent>
@@ -122,6 +129,9 @@ const ViewRequest: React.FC = () => {
               </IonCard>
 
               <IonCard>
+                  <IonCardHeader>
+                      <IonCardTitle> Tony Stark needs help with technology related work on 4th April 2021, 12:00 PM (EST).</IonCardTitle>
+                  </IonCardHeader>
                   <IonGrid>
                       <IonRow>
                           <IonCol size="3">
@@ -131,9 +141,6 @@ const ViewRequest: React.FC = () => {
                               </IonAvatar>
                           </IonCol>
                           <IonCol>
-                              <IonCardContent>
-                                  Tony Stark needs help with technology related work on 4th April 2021, 12:00 PM (EST)
-                              </IonCardContent>
                               <IonCardContent>
                                   Location: 877 Huntington ave, Boston
                               </IonCardContent>
@@ -178,7 +185,7 @@ const ViewRequest: React.FC = () => {
                   setCovidTested(true)
                   history.push('/requestDetails')
               }
-          
+
           },{
             text: 'No',
             role: "cancel",
@@ -196,7 +203,7 @@ const ViewRequest: React.FC = () => {
         /> */}
         <Modal showModal={showModal1}
                    yesAction={() =>{
-                    setCovidTested(true)   
+                    setCovidTested(true)
                     redirectToRequestDetail()
                    }}
                    primaryButtonText={"Yes"}

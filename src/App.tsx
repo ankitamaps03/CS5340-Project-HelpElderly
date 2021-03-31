@@ -58,7 +58,6 @@ const App: React.FC = () => {
             <Route path="/login/:name" exact={true}>
               <Login/>
             </Route>
-
             <Route path="/requestHelp" exact={true}>
               <RequestHelp/>
             </Route>

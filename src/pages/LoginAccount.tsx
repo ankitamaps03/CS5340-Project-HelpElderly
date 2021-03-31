@@ -20,7 +20,6 @@ const LoginAccount: React.FC = () => {
                 <div style={{top: "51%"}} className="container">
                     <LoginForm />
                 </div>
-
             </IonContent>
         </IonPage>)
 }

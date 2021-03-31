@@ -23,10 +23,20 @@ import ButtonForHome from "./ButtonForHome";
 import Modal from "./Modal";
 import { ToastContainer, toast } from 'react-toastify';
 import { useHistory } from "react-router";
+import {useParams} from "react-router-dom";
 
 const RequestDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
     const [showCallerDetails, setShowCallerDetails] = useState(false);
+    const [startHelping, setStartHelping] = useState(true)
+    let params = {
+        id: ''
+    }
+    params = useParams();
+    let isLogin = false;
+    if (params.id) {
+        isLogin = true;
+    }
     let history = useHistory();
     const showToaster = () => {
         setShowCallerDetails(false);
@@ -65,8 +75,7 @@ const RequestDetails: React.FC = () => {
     }
     return (
         <IonPage>
-            <TopPageHeader isLogin={true} />
-
+            <TopPageHeader isLogin={isLogin} />
             <IonContent>
                 <ButtonForBack />
                 <ButtonForHome />
@@ -86,7 +95,7 @@ const RequestDetails: React.FC = () => {
                                             src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
                                 </IonCol>
-                                
+
                                 <IonCol>
                                 <IonItemDivider>
                                     <IonLabel style={{marginRight: "7px"}}>
@@ -140,7 +149,7 @@ const RequestDetails: React.FC = () => {
                         </IonGrid>
               </IonCardContent>
           </IonCard>
-        
+
             <Modal showModal={showCallerDetails}
                    showExtraButtons={false}
                    primaryButtonText={"Copy to Clipboard"}

@@ -16,7 +16,6 @@ const LoginForm: React.FC = () => {
     }
     params = useParams();
     const redirect = () => {
-        console.log(params)
         if (params.name == "DirectLogin") {
             history.push("/requestHelp/1")
         } else if (params.name == "RequestHelp") {
@@ -24,6 +23,13 @@ const LoginForm: React.FC = () => {
             setTimeout(() => {
                 setShowLoading(false);
                 history.push('/viewHelpDetails/1')
+            }, 2000);
+        }
+        else if (params.name == "helper") {
+            setShowLoading(true)
+            setTimeout(() => {
+                setShowLoading(false);
+                history.push('/requestDetails/2')
             }, 2000);
         }
     }
@@ -69,6 +75,13 @@ const LoginForm: React.FC = () => {
                     isOpen={showLoading}
                     onDidDismiss={() => setShowLoading(false)}
                     message={'Requesting help.. Please wait..'}
+                    duration={5000}
+                />
+                <IonLoading
+                    cssClass='my-custom-class'
+                    isOpen={showLoading}
+                    onDidDismiss={() => setShowLoading(false)}
+                    message={'Processing the request.. Please wait..'}
                     duration={5000}
                 />
             </IonList>
