@@ -146,7 +146,7 @@ const HelperDetails: React.FC = () => {
                    primaryButtonText={"Copy to Clipboard"}
                    yesAction={showToaster}
                    closeModal={() => setShowCallerDetails(false)}
-                   bodyText="Phone number:+1 567 8907"
+                   bodyText="Phone number: +1 567 890 7656"
             />
             <ToastContainer
 

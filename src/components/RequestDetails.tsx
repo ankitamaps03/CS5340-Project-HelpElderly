@@ -8,18 +8,61 @@ import {
     IonContent,
     IonGrid,
     IonIcon,
+    IonItemDivider,
+    IonLabel,
     IonPage,
     IonRow
 } from "@ionic/react";
 import './RequestHelpForm.css';
-import React from "react";
-import {helpSharp, newspaperSharp, pin, timerOutline} from "ionicons/icons";
+import React, { useState } from "react";
+import {chatbubble, hammer, helpSharp, newspaperSharp, pin, timerOutline} from "ionicons/icons";
 import TopPageHeader from "./TopPageHeader";
 import Header from "./Header";
 import ButtonForBack from "./ButtonForBack";
 import ButtonForHome from "./ButtonForHome";
+import Modal from "./Modal";
+import { ToastContainer, toast } from 'react-toastify';
+import { useHistory } from "react-router";
 
 const RequestDetails: React.FC = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [showCallerDetails, setShowCallerDetails] = useState(false);
+    let history = useHistory();
+    const showToaster = () => {
+        setShowCallerDetails(false);
+        toast.info('Copied to the clipboard!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
+    }
+    const redirectToRating = () => {
+        setShowModal(false)
+        history.push('/AddRatingElderly/1')
+    }
+
+    const redirectToHome = () => {
+        setShowModal(false)
+        history.push('/1')
+    }
+    const startHelping = () =>{
+        var x = document.getElementById("finishHelp");
+        if(x!=null){
+            x.style.display = "block";
+        }
+        var x = document.getElementById("startHelp");
+        if(x!=null){
+            x.style.display = "none";
+        }
+    }
+    const finishedHelping=()=>{
+        setShowModal(true)
+    }
     return (
         <IonPage>
             <TopPageHeader isLogin={true} />
@@ -43,7 +86,7 @@ const RequestDetails: React.FC = () => {
                                             src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
                                 </IonCol>
-                                <IonCol>
+                                {/* <IonCol>
                                     <div>
                                         <IonIcon
                                             style={{color: 'green', fontSize: '20px', marginTop: '2px'}}
@@ -59,22 +102,88 @@ const RequestDetails: React.FC = () => {
                                         Comments: Pick up one gallon of milk and a dozed bananas. Address is Star
                                         Market, 1330 Boylston St, Boston MA. Call me if you any information
                                     </div>
-                                </IonCol>
+                                </IonCol> */}
+                                <IonCol>
+                                <IonItemDivider>
+                                    <IonLabel style={{marginRight: "7px"}}>
+                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
+                                                 icon={hammer}/>
+                                    </IonLabel>
+                                    <IonLabel>
+                                        <strong>Help Requested:</strong> Grocery Pick-up
+                                    </IonLabel>
+                                </IonItemDivider>
+                                <IonItemDivider>
+                                    <IonLabel style={{marginRight: "7px"}}>
+                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
+                                                 icon={timerOutline}/>
+                                    </IonLabel>
+                                    <IonLabel>
+                                        <strong> When: </strong>30th March 2021, 03:00PM (EST)
+                                    </IonLabel>
+                                </IonItemDivider>
+                                <IonItemDivider>
+                                    <div style={{marginRight: "4px"}}>
+                                        <IonIcon style={{color: '', fontSize: '20px', marginTop: '2px'}}
+                                                 icon={chatbubble}/>
+                                    </div>
+                                    <div>
+                                        <strong>Comments:</strong> Pick up one gallon of milk and a dozen bananas.
+                                        Address is Star
+                                        Market, 1330 Boylston St, Boston MA. Call me if you need any information.
+                                    </div>
+                                </IonItemDivider>
+                            </IonCol>
                       </IonRow>
                             <IonRow>
                                 <IonButton
-                                    color="secondary">
+                                    color="secondary"
+                                    onClick={() => setShowCallerDetails(true)}>
                                     Call
                                 </IonButton>
-                                <IonButton
-                                    color="secondary">
+                                <IonButton id="startHelp"
+                                    color="secondary"
+                                    onClick={startHelping}>
                                     Start Helping
+                                </IonButton>
+                                <IonButton id="finishHelp" style={{display:"none"}}
+                                    color="secondary"
+                                    onClick={finishedHelping}>
+                                    Finished Helping?
                                 </IonButton>
                             </IonRow>
 
                         </IonGrid>
               </IonCardContent>
           </IonCard>
+        
+            <Modal showModal={showCallerDetails}
+                   showExtraButtons={false}
+                   primaryButtonText={"Copy to Clipboard"}
+                   yesAction={showToaster}
+                   closeModal={() => setShowCallerDetails(false)}
+                   bodyText="Phone number: +1 567 890 7656"
+            />
+            <ToastContainer
+
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <Modal showModal={showModal}
+                   yesAction={redirectToRating}
+                   primaryButtonText={"Yes"}
+                   noAction={redirectToHome}
+                   showExtraButtons={true}
+                   closeModal={() => setShowModal(false)}
+                   bodyText="Do you want to rate Alice?"
+            />
       </IonContent>
       </IonPage>
   )
