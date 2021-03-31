@@ -43,7 +43,7 @@ const RequestDetails: React.FC = () => {
     }
     const redirectToRating = () => {
         setShowModal(false)
-        history.push('/AddRatingElderly/1')
+        history.push('/addRatingYoung')
     }
 
     const redirectToHome = () => {
@@ -86,23 +86,7 @@ const RequestDetails: React.FC = () => {
                                             src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
                                 </IonCol>
-                                {/* <IonCol>
-                                    <div>
-                                        <IonIcon
-                                            style={{color: 'green', fontSize: '20px', marginTop: '2px'}}
-                                            icon={helpSharp}/>
-                                        Help Requested: Grocery Pick-up
-                                    </div>
-                                    <div>
-                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
-                                                 icon={timerOutline}/>
-                                        When: Apr 1, 1:45 PM.
-                                    </div>
-                                    <div>
-                                        Comments: Pick up one gallon of milk and a dozed bananas. Address is Star
-                                        Market, 1330 Boylston St, Boston MA. Call me if you any information
-                                    </div>
-                                </IonCol> */}
+                                
                                 <IonCol>
                                 <IonItemDivider>
                                     <IonLabel style={{marginRight: "7px"}}>

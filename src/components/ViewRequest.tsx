@@ -18,12 +18,14 @@ import React, { useState } from "react";
 import {useHistory, useParams} from "react-router-dom";
 import ButtonForBack from "./ButtonForBack";
 import ButtonForHome from "./ButtonForHome";
+import Modal from "./Modal";
 
 
 const ViewRequest: React.FC = () => {
-  const [showAlert1, setShowAlert1] = useState(false);
-  const [showAlert2, setShowAlert2] = useState(false);
   const [isCovidTested, setCovidTested] = useState(false);
+  const [showAlert2, setShowAlert2] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
   let history = useHistory();
 
   let params = {
@@ -60,13 +62,11 @@ const ViewRequest: React.FC = () => {
     hideAcceptButton(id)
     showAcceptedMessage(id)
   };
-  const acceptRequest =(id: number)=>{
-    if(isCovidTested){
-        hideButtonsForAccepted(id)
+  const redirectToRequestDetail =()=>{
+    
+        setShowModal1(false)
         history.push('/requestDetails')
-    }else{
-        setShowAlert1(true)
-    }
+    
   }
   return (
       <IonPage>
@@ -100,7 +100,7 @@ const ViewRequest: React.FC = () => {
                   <div id="requestButtons1">
                   <IonButton fill="solid"
                                  color="secondary"
-                                 onClick={()=>acceptRequest(1)}>
+                                 onClick={()=>isCovidTested?redirectToRequestDetail():setShowModal1(true)}>
                           Accept Request
                       </IonButton>
                       <IonButton fill="solid"
@@ -146,7 +146,7 @@ const ViewRequest: React.FC = () => {
                   <div id="requestButtons2" >
                       <IonButton fill="solid"
                                  color="secondary"
-                                 onClick={()=>acceptRequest(2)}>
+                                 onClick={()=>isCovidTested?redirectToRequestDetail():setShowModal1(true)}>
                           Accept Request
                       </IonButton>
                       <IonButton fill="solid"
@@ -166,7 +166,7 @@ const ViewRequest: React.FC = () => {
                     </IonItem>
                   </div>
               </IonCard>
-              <IonAlert
+              {/* <IonAlert
           isOpen={showAlert1}
           onDidDismiss={() => setShowAlert1(false)}
           cssClass='my-custom-class'
@@ -185,14 +185,35 @@ const ViewRequest: React.FC = () => {
             cssClass: 'secondary',
             handler: () => setShowAlert2(true)
           }]}
-        />
-        <IonAlert
+        /> */}
+        {/* <IonAlert
           isOpen={showAlert2}
           onDidDismiss={() => setShowAlert2(false)}
           cssClass='my-custom-class'
           header={'Alert'}
           message={'Kindly take Covid test and visit us again.'}
           buttons={['OK']}
+        /> */}
+        <Modal showModal={showModal1}
+                   yesAction={() =>{
+                    setCovidTested(true)   
+                    redirectToRequestDetail()
+                   }}
+                   primaryButtonText={"Yes"}
+                   noAction={()=>{
+                       setShowModal1(false)
+                       setShowModal2(true)
+                   }}
+                   showExtraButtons={true}
+                   closeModal={() => setShowModal1(false)}
+                   bodyText="Did you get Covid test in last 2 days or have you been vaccinated?"
+            />
+        <Modal showModal={showModal2}
+                primaryButtonText={"Okay"}
+                yesAction={() => setShowModal2(false)}
+                closeModal={() => setShowModal2(false)}
+                showExtraButtons={false}
+                bodyText="Please get tested and visit again!"
         />
           </IonContent>
       </IonPage>
