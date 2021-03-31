@@ -19,7 +19,7 @@ import ButtonForBack from "../components/ButtonForBack";
 import ButtonForHome from "../components/ButtonForHome";
 
 
-const ViewHistoryElderly: React.FC = () => {
+const ViewHistoryHelper: React.FC = () => {
 
     let history = useHistory();
     let params = {
@@ -37,7 +37,7 @@ const ViewHistoryElderly: React.FC = () => {
             <IonContent>
                 <ButtonForBack/>
                 <ButtonForHome/>
-                <Header name={"View history for requested help"} icon={listCircleSharp}/>
+                <Header name={"View history of requested provided"} icon={listCircleSharp}/>
                 <IonCard>
                     <IonGrid>
                         <IonRow>
@@ -49,10 +49,10 @@ const ViewHistoryElderly: React.FC = () => {
                             </IonCol>
                             <IonCol>
                                 <IonCardContent>
-                                    <strong>Bob Marley</strong> helped you with groceries on 29th March 2021, 03:00 PM (EST)
+                                    You helped <strong>Bob Marley</strong> with groceries on 29th March 2021, 03:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the help with 4 stars.
+                                    You rated the person with 3 stars.
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
@@ -62,11 +62,6 @@ const ViewHistoryElderly: React.FC = () => {
                                    color="secondary"
                                    onClick={() => history.push('/helpProvided')}>
                             View Help
-                        </IonButton>
-                        <IonButton fill="solid"
-                                   color="secondary"
-                                   onClick={() => history.push('/requestHelp/1/groceries')}>
-                            Request Help Again
                         </IonButton>
                     </div>
                 </IonCard>
@@ -82,7 +77,7 @@ const ViewHistoryElderly: React.FC = () => {
                             </IonCol>
                             <IonCol>
                                 <IonCardContent>
-                                    <strong>Diana Prince </strong>helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                   You helped <strong>Diana Prince</strong> with technology related work on 23th March 2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
                                     You have not rated this help.
@@ -98,12 +93,7 @@ const ViewHistoryElderly: React.FC = () => {
                         </IonButton>
                         <IonButton fill="solid"
                                    color="secondary"
-                                   onClick={() => history.push('/requestHelp/1/groceries')}>
-                            Request Help Again
-                        </IonButton>
-                        <IonButton fill="solid"
-                                   color="secondary"
-                                   onClick={() => history.push('/addRatingElderlyWoman')}>
+                                   onClick={() => history.push('/addRatingYoung')}>
                             Rate
                         </IonButton>
                     </div>
@@ -119,10 +109,10 @@ const ViewHistoryElderly: React.FC = () => {
                             </IonCol>
                             <IonCol>
                                 <IonCardContent>
-                                    <strong>Tony Stark </strong> helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                    You helped <strong>Tony Stark </strong>  with technology related work on 23th March 2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the help with 5 stars.
+                                    You rated the person with 5 stars.
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
@@ -133,15 +123,11 @@ const ViewHistoryElderly: React.FC = () => {
                                    onClick={() => history.push('/helpProvided')}>
                             View Help
                         </IonButton>
-                        <IonButton fill="solid"
-                                   color="secondary">
-                            Request Help Again
-                        </IonButton>
                     </div>
                 </IonCard>
             </IonContent>
         </IonPage>
-        )
+    )
 }
 
-export default ViewHistoryElderly;
+export default ViewHistoryHelper;

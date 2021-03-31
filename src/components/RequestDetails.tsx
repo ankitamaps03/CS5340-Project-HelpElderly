@@ -28,7 +28,7 @@ import {useParams} from "react-router-dom";
 const RequestDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
     const [showCallerDetails, setShowCallerDetails] = useState(false);
-    const [startHelping, setStartHelping] = useState(true)
+    const [startHelp, setStartHelp] = useState(true)
     let params = {
         id: ''
     }
@@ -61,13 +61,8 @@ const RequestDetails: React.FC = () => {
         history.push('/1')
     }
     const startHelping = () =>{
-        var x = document.getElementById("finishHelp");
-        if(x!=null){
-            x.style.display = "block";
-        }
-        var x = document.getElementById("startHelp");
-        if(x!=null){
-            x.style.display = "none";
+        if(startHelp){
+           setStartHelp(false)
         }
     }
     const finishedHelping=()=>{
@@ -134,16 +129,19 @@ const RequestDetails: React.FC = () => {
                                     onClick={() => setShowCallerDetails(true)}>
                                     Call
                                 </IonButton>
-                                <IonButton id="startHelp"
+
+                                { startHelp && <IonButton id="startHelp"
                                     color="secondary"
                                     onClick={startHelping}>
                                     Start Helping
-                                </IonButton>
-                                <IonButton id="finishHelp" style={{display:"none"}}
-                                    color="secondary"
-                                    onClick={finishedHelping}>
+                                </IonButton>}
+                                {startHelp == false &&
+                                <IonButton id="finishHelp"
+                                           color="secondary"
+                                           onClick={finishedHelping}>
                                     Finished Helping?
                                 </IonButton>
+                                }
                             </IonRow>
 
                         </IonGrid>

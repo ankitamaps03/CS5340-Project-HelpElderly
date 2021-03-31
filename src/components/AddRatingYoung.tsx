@@ -35,7 +35,7 @@ const AddRatingYoung: React.FC = () => {
     const [ratingComments, setRatingComments] = useState('');
 
     const redirectToHome = () => {
-        history.push("/1");
+        history.push("/2");
     }
     // @ts-ignore
     return (
