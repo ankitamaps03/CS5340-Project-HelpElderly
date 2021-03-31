@@ -46,7 +46,7 @@ const AddRatingYoung: React.FC = () => {
                 <ButtonForHome />
                 <IonCard style={{height: "100%"}}>
                     <IonCardHeader>
-                        <IonCardSubtitle>Rate the elderly.</IonCardSubtitle>
+                        <IonCardSubtitle>Rate the helpee.</IonCardSubtitle>
                         <IonCardTitle>Rate Alice Hyatt</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
@@ -77,7 +77,7 @@ const AddRatingYoung: React.FC = () => {
                                         <IonLabel>Do you want to tell us more about Alice Hyatt?</IonLabel>
                                     </IonLabel>
                                     <IonTextarea
-                                        placeholder={'Add comments about your helper'}
+                                        placeholder={'Add comments about the person you helped'}
                                         value={ratingComments}
                                         onIonChange={e => setRatingComments(e.detail.value!)}/>
                                 </div>
