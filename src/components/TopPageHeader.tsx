@@ -1,7 +1,7 @@
 import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonPopover, IonTitle, IonToolbar} from "@ionic/react";
 import {personCircle} from "ionicons/icons";
 import React, {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import ButtonForHistory from "./ButtonForHistory";
 
 type TopPageHeaderProps = {
@@ -21,7 +21,9 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
     const logout = (event: any) => {
         setShowPopover({showPopover: false, event: event});
         history.push('/')
+        window.location.reload();
     }
+
 
     return (
         <IonHeader>

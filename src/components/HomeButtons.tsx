@@ -15,9 +15,8 @@ const HomeButtons: React.FC = () => {
     }
     params = useParams();
 
-
-
     const redirect = (buttonName: number) => {
+        console.log({params}, "in home buttons")
         if (params.id) {
             if (buttonName === 0) {
                 history.push(`requestHelp/1`);

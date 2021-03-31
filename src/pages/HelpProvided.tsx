@@ -48,6 +48,7 @@ const HelpProvided: React.FC = () => {
                                     </IonAvatar>
                                 </IonCol>
                                 <IonCol>
+                                    Rating given by you:
                                     <ReactStars
                                         count={5}
                                         value={4}
@@ -56,7 +57,6 @@ const HelpProvided: React.FC = () => {
                                         activeColor="#ffd700"
                                     />
                                 </IonCol>
-
                             <IonCol>
                                 <IonItemDivider>
                                     <IonLabel style={{marginRight: "7px"}}>

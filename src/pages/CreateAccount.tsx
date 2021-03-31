@@ -1,33 +1,23 @@
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
+import {IonContent, IonPage} from "@ionic/react";
 import './Login.css';
 import {useHistory} from "react-router-dom";
 import CreateForm from "../components/CreateForm";
 import ButtonForBack from "../components/ButtonForBack"
+import TopPageHeader from "../components/TopPageHeader";
+import Header from "../components/Header";
+import {personCircle} from "ionicons/icons";
+import ButtonForHome from "../components/ButtonForHome";
 
 const LoginAccount: React.FC = () => {
     let history = useHistory();
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar color="head">
-                    <IonTitle>Create an Account</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-
+            <TopPageHeader isLogin={false}/>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                    </IonToolbar>
-
-                </IonHeader>
-
-                <br/>
-                <ButtonForBack />
-                <br/>
-                <div className="container">
-                    <CreateForm />
-                </div>
-
+                <ButtonForBack/>
+                <ButtonForHome/>
+                <Header name={"Create Account"} icon={personCircle}/>
+                <CreateForm/>
             </IonContent>
         </IonPage>)
 }

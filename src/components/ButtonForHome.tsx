@@ -1,12 +1,21 @@
 import {IonButton, IonIcon} from "@ionic/react";
-import {home} from "ionicons/icons";
+import {call, home} from "ionicons/icons";
 import React from "react";
 import {useHistory} from "react-router-dom";
 
-const ButtonForHome = () => {
+type ButtonForHomeProps = {
+    callFrom?: string
+}
+
+const ButtonForHome = ({callFrom}: ButtonForHomeProps) => {
     const history = useHistory();
     const redirectToHome = () => {
-        history.push('/1')
+        if (callFrom == "1") {
+            history.push('/2')
+        }
+        else {
+            history.push('/1')
+        }
     }
     return(<IonButton
         fill="solid"

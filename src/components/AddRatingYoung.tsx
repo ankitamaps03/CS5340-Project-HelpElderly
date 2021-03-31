@@ -55,7 +55,7 @@ const AddRatingYoung: React.FC = () => {
                                 <IonCol size="3">
                                     <IonAvatar>
                                         <img
-                                            src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
+                                            src="https://cdn3.vectorstock.com/i/1000x1000/95/22/old-woman-avatar-round-icon-vector-24929522.jpg"/>
                                     </IonAvatar>
                                     <br/>
                                 </IonCol>

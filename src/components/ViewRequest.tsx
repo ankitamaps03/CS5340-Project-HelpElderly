@@ -33,8 +33,10 @@ const ViewRequest: React.FC = () => {
   }
   params = useParams();
   let isLogin = false;
+  console.log({params})
   if (params.id) {
       isLogin = true;
+
   }
 
   const hideAcceptButton = (id: number) =>{
@@ -76,10 +78,10 @@ const ViewRequest: React.FC = () => {
   }
   return (
       <IonPage>
-          <TopPageHeader isLogin={isLogin} showViewHistory={false}/>
+          <TopPageHeader isLogin={isLogin} showViewHistory={isLogin}/>
           <IonContent>
               <ButtonForBack/>
-              <ButtonForHome/>
+              <ButtonForHome callFrom="1"/>
               <Header name={"View Requests"} icon={book}/>
               <IonCard>
                   <IonCardHeader>
@@ -164,7 +166,7 @@ const ViewRequest: React.FC = () => {
                   </div>
                   <div id="acceptedMessage2" style={{ display: "none"}}>
                   <IonItem color="secondary">
-                    Request Acceped
+                    Request Accepted
                     </IonItem>
                   </div>
                   <div id="declinedMessage2" style={{ display: "none"}}>

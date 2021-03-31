@@ -36,6 +36,7 @@ import HelpProvided from "./pages/HelpProvided";
 import AddRatingElderlyWoman from "./pages/AddRatingElderlyWoman";
 import AddRatingYoung from './components/AddRatingYoung';
 import ViewHistoryHelper from "./pages/ViewHistoryHelper";
+import HelpProvidedHelper from "./pages/HelpProvidedHelper";
 
 const App: React.FC = () => {
   return (
@@ -122,6 +123,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/helpProvided" exact={true}>
               <HelpProvided />
+            </Route>
+            <Route path="/helpProvidedHelper" exact={true}>
+              <HelpProvidedHelper />
             </Route>
 
 
