@@ -1,8 +1,8 @@
-import {IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
 import './Login.css';
 import {useHistory} from "react-router-dom";
-import LoginForm from "../components/LoginForm";
 import CreateForm from "../components/CreateForm";
+import ButtonForBack from "../components/ButtonForBack"
 
 const LoginAccount: React.FC = () => {
     let history = useHistory();
@@ -10,7 +10,7 @@ const LoginAccount: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar color="head">
-                    <IonTitle>Login to Help Elderly</IonTitle>
+                    <IonTitle>Create an Account</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
@@ -22,13 +22,7 @@ const LoginAccount: React.FC = () => {
                 </IonHeader>
 
                 <br/>
-                <IonButton
-
-                    color="primary"
-                    onClick={() => history.goBack()}
-                >
-                    Go back
-                </IonButton>
+                <ButtonForBack />
                 <br/>
                 <div className="container">
                     <CreateForm />
