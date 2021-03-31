@@ -23,7 +23,8 @@ import Modal from "./Modal";
 
 const ViewRequest: React.FC = () => {
   const [isCovidTested, setCovidTested] = useState(false);
-  const [showAlert2, setShowAlert2] = useState(false);
+  const [declined1, setDeclined1] = useState(false);
+  const [declined2, setDeclined2] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   let history = useHistory();
@@ -39,32 +40,32 @@ const ViewRequest: React.FC = () => {
 
   }
 
-  const hideAcceptButton = (id: number) =>{
-    var x = document.getElementById("requestButtons"+id);
-    if(x!=null){
-        x.style.display = "none";
-    }
-  }
-  const showDeclinedMessage=(id: number)=>{
-    var y = document.getElementById("declinedMessage"+id);
-    if(y!=null){
-        y.style.display = "block";
-    }
-  }
-  const showAcceptedMessage=(id: number)=>{
-    var y = document.getElementById("acceptedMessage"+id);
-    if(y!=null){
-        y.style.display = "block";
-    }
-  }
-  const hideButtonsForDeclined = (id: number) =>{
-    hideAcceptButton(id)
-    showDeclinedMessage(id)
-  };
-  const hideButtonsForAccepted = (id: number) =>{
-    hideAcceptButton(id)
-    showAcceptedMessage(id)
-  };
+//   const hideAcceptButton = (id: number) =>{
+//     var x = document.getElementById("requestButtons"+id);
+//     if(x!=null){
+//         x.style.display = "none";
+//     }
+//   }
+//   const showDeclinedMessage=(id: number)=>{
+//     var y = document.getElementById("declinedMessage"+id);
+//     if(y!=null){
+//         y.style.display = "block";
+//     }
+//   }
+//   const showAcceptedMessage=(id: number)=>{
+//     var y = document.getElementById("acceptedMessage"+id);
+//     if(y!=null){
+//         y.style.display = "block";
+//     }
+//   }
+//   const hideButtonsForDeclined = (id: number) =>{
+//     hideAcceptButton(id)
+//     showDeclinedMessage(id)
+//   };
+//   const hideButtonsForAccepted = (id: number) =>{
+//     hideAcceptButton(id)
+//     showAcceptedMessage(id)
+//   };
   const redirectToRequestDetail =()=>{
         if(params.id) {
             setShowModal1(false)
@@ -106,7 +107,7 @@ const ViewRequest: React.FC = () => {
                           </IonCol>
                       </IonRow>
                   </IonGrid>
-                  <div id="requestButtons1">
+                  {!declined1 &&  <div id="requestButtons1">
                   <IonButton fill="solid"
                                  color="secondary"
                                  onClick={()=>isCovidTested?redirectToRequestDetail():setShowModal1(true)}>
@@ -114,20 +115,20 @@ const ViewRequest: React.FC = () => {
                       </IonButton>
                       <IonButton fill="solid"
                                  color="secondary"
-                                 onClick={() => hideButtonsForDeclined(1)}>
+                                 onClick={() => setDeclined1(true)}>
                           Decline Request
                       </IonButton>
-                  </div>
+                  </div>}
                   <div id="acceptedMessage1" style={{ display: "none"}}>
                   <IonItem color="secondary">
                     Request Acceped
                     </IonItem>
                   </div>
-                  <div id="declinedMessage1" style={{ display: "none"}}>
+                  {declined1 && <div id="declinedMessage1" >
                   <IonItem color="warning">
                     Request Declined
                     </IonItem>
-                  </div>
+                  </div>}
               </IonCard>
 
               <IonCard>
@@ -152,7 +153,7 @@ const ViewRequest: React.FC = () => {
                           </IonCol>
                       </IonRow>
                   </IonGrid>
-                  <div id="requestButtons2" >
+                  {!declined2 && <div id="requestButtons2" >
                       <IonButton fill="solid"
                                  color="secondary"
                                  onClick={()=>isCovidTested?redirectToRequestDetail():setShowModal1(true)}>
@@ -160,20 +161,20 @@ const ViewRequest: React.FC = () => {
                       </IonButton>
                       <IonButton fill="solid"
                                  color="secondary"
-                                 onClick={() => hideButtonsForDeclined(2)}>
+                                 onClick={() => setDeclined2(true)}>
                           Decline Request
                       </IonButton>
-                  </div>
+                  </div>}
                   <div id="acceptedMessage2" style={{ display: "none"}}>
                   <IonItem color="secondary">
                     Request Accepted
                     </IonItem>
                   </div>
-                  <div id="declinedMessage2" style={{ display: "none"}}>
+                  {declined2 && <div id="declinedMessage2" >
                   <IonItem color="warning">
                     Request Declined
                     </IonItem>
-                  </div>
+                  </div>}
               </IonCard>
               {/* <IonAlert
           isOpen={showAlert1}

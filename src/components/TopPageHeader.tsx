@@ -48,21 +48,24 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                             </IonPopover>
                             {showViewHistory && <ButtonForHistory/>}
                             <IonButton
+                            
                                 onClick={
                                     (e: any) => {
                                         e.persist();
                                         setShowPopover({showPopover: true, event: e})
                                     }}>
-                                <IonIcon slot="icon-only" icon={personCircle}/>
+                                        
+                                <IonIcon slot="start" icon={personCircle}/>Alice Murray
+                                
                             </IonButton>
-                            <IonLabel
+                            {/* <IonLabel
                                 onClick={
                                     (e: any) => {
                                         e.persist();
                                         setShowPopover({showPopover: true, event: e})
                                     }}>
                                 Alice Murray
-                            </IonLabel>
+                            </IonLabel> */}
                         </div>}
                 </IonButtons>
                 <IonButtons slot="primary">
