@@ -22,7 +22,7 @@ const ButtonForHome = ({callFrom}: ButtonForHomeProps) => {
         color="secondary"
         onClick={redirectToHome}>
         Home
-        <IonIcon slot="end" icon={home}/>
+        <IonIcon slot="start" icon={home}/>
     </IonButton>)
 }
 

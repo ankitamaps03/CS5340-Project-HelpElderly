@@ -27,6 +27,7 @@ import Header from "../components/Header";
 import TopPageHeader from "../components/TopPageHeader";
 import ButtonForHome from "../components/ButtonForHome";
 import ButtonForBack from "../components/ButtonForBack";
+import './AddRatingElderly.css';
 
 const AddRatingElderly: React.FC = () => {
     let history = useHistory();
@@ -48,13 +49,13 @@ const AddRatingElderly: React.FC = () => {
                 <IonCard style={{height: "100%"}}>
                     <IonCardHeader>
                         <IonCardSubtitle>Rate the help service provided.</IonCardSubtitle>
-                        <IonCardTitle>Rate Bob Marley</IonCardTitle>
+                        <IonCardTitle className="helper-heading">Rate your experience with Bob Marley</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
                         <IonGrid>
                             <IonRow>
-                                <IonCol size="3">
-                                    <IonAvatar>
+                                <IonCol size="2">
+                                    <IonAvatar style={{width: "160px", height: "160px"}}>
                                         <img
                                             src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
                                     </IonAvatar>
@@ -73,7 +74,7 @@ const AddRatingElderly: React.FC = () => {
                         </IonGrid>
                         <IonCardContent>
                             <IonItemDivider style={{width: '100%'}}>
-                                <div>
+                                <div className="helper-details">
                                     <IonLabel>
                                         <IonLabel>Do you want to tell us more about Bob Marley?</IonLabel>
                                     </IonLabel>
@@ -86,7 +87,7 @@ const AddRatingElderly: React.FC = () => {
 
                         </IonCardContent>
                         <IonRow>
-                            <IonCol size='6'>
+                            <IonCol size='1'>
                                 <IonButton
                                     onClick={redirectToHome}
                                     color="primary">

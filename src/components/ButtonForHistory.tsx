@@ -29,7 +29,7 @@ const ButtonForHistory = () => {
         color="secondary"
         onClick={redirectToHistory}>
         View History
-        <IonIcon slot="end" icon={listCircle}/>
+        <IonIcon slot="start" icon={listCircle}/>
     </IonButton>)
 }
 

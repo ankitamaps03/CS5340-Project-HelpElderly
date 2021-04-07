@@ -69,14 +69,13 @@ const HelperDetails: React.FC = () => {
             <IonCard>
                 <IonCardHeader>
                     <IonCardSubtitle>Bob Marley is on his way to 1191 Boylston St, Boston MA 02215</IonCardSubtitle>
-                    <IonCardTitle>"Bob Marley" is your assigned help</IonCardTitle>
+                    <IonCardTitle className="helper-heading">"Bob Marley" is your assigned help</IonCardTitle>
                 </IonCardHeader>
-
                 <IonCardContent>
                     <IonGrid>
                         <IonRow>
-                            <IonCol size="3">
-                                <IonAvatar>
+                            <IonCol size="2">
+                                <IonAvatar style={{width: "160px", height: "160px"}}>
                                     <img
                                         src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
                                 </IonAvatar>
@@ -88,14 +87,15 @@ const HelperDetails: React.FC = () => {
                                 </IonButton>
                             </IonCol>
                             <IonCol>
-                                <div><IonIcon
-                                    style={{color: 'green', fontSize: '20px', marginTop: '2px'}}
+                                <div className="helper-details">
+                                    <IonIcon
+                                    style={{color: 'green', fontSize: '30px', marginRight: '10px'}}
                                     icon={checkmarkCircle}/>
                                     Bob Marley is covid negative.
                                 </div>
-                                <div>
+                                <div className="helper-details">
                                     <IonIcon
-                                        style={{color: 'yellow', fontSize: '20px', marginTop: '2px'}}
+                                        style={{color: 'yellow', fontSize: '30px', marginRight: '10px'}}
                                         icon={star}/>
                                     Bob Marley has a 4 star rating.
                                 </div>
@@ -110,20 +110,20 @@ const HelperDetails: React.FC = () => {
                                         <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
                                                  icon={time}/>
                                     </IonLabel>
-                                    <IonLabel>
+                                    <div className="helper-details">
                                         Estimated time is 30 minutes.
-                                    </IonLabel>
+                                    </div>
                                 </IonItemDivider>
                             </IonCardContent>
                         </IonRow>
                         <IonRow>
-                            <IonCardContent>
+                            <IonCardContent style={{width: "100%"}}>
                                 <IonItemDivider>
                                     <div style={{marginRight: "4px"}}>
                                         <IonIcon style={{color: '', fontSize: '20px', marginTop: '2px'}}
                                                  icon={chatbubble}/>
                                     </div>
-                                    <div>
+                                    <div className="helper-details">
                                         Your comments: Pick up one gallon of milk and a dozed bananas. Address is Star
                                         Market, 1330 Boylston St, Boston MA. Call me if you any information.
                                     </div>

@@ -6,3 +6,9 @@
     --ion-color-shade: var(--ion-color-header-shade);
     --ion-color-tint: var(--ion-color-header-tint);
 }
+
+.homeCard {
+    width: 70%;
+    margin-left: 85px;
+    height: 350px;
+}

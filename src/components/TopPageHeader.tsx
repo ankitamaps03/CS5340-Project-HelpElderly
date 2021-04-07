@@ -1,7 +1,7 @@
 import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonPopover, IonTitle, IonToolbar} from "@ionic/react";
-import {personCircle} from "ionicons/icons";
+import {personCircle, sunnyOutline} from "ionicons/icons";
 import React, {useState} from "react";
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import ButtonForHistory from "./ButtonForHistory";
 
 type TopPageHeaderProps = {
@@ -18,6 +18,10 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
         history.push('/loginAccount/DirectLogin')
     }
 
+    const redirectToCreateAccount = () => {
+        history.push('/createAccount')
+    }
+
     const logout = (event: any) => {
         setShowPopover({showPopover: false, event: event});
         history.push('/')
@@ -28,7 +32,6 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
     return (
         <IonHeader>
             <IonToolbar color="head">
-
                 <IonButtons slot="secondary">
                     {
                         isLogin
@@ -48,15 +51,15 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                             </IonPopover>
                             {showViewHistory && <ButtonForHistory/>}
                             <IonButton
-                            
+
                                 onClick={
                                     (e: any) => {
                                         e.persist();
                                         setShowPopover({showPopover: true, event: e})
                                     }}>
-                                        
-                                <IonIcon slot="start" icon={personCircle}/>Alice Murray
-                                
+
+                            <IonIcon slot="start" icon={personCircle}/>Alice Murray
+
                             </IonButton>
                             {/* <IonLabel
                                 onClick={
@@ -69,7 +72,7 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                         </div>}
                 </IonButtons>
                 <IonButtons slot="primary">
-                    { showLogin && !isLogin &&
+                    {showLogin && !isLogin &&
                     <IonButton
                         fill="solid"
                         color="secondary"
@@ -77,6 +80,17 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                     >
                         Login
                     </IonButton>
+
+                    }
+                    {showLogin && !isLogin &&
+                    <IonButton
+                        fill="solid"
+                        color="secondary"
+                        onClick={redirectToCreateAccount}
+                    >
+                        Create an account
+                    </IonButton>
+
                     }
                     {/*<IonButton fill="solid" color="secondary">
                         Help
@@ -84,7 +98,14 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                     </IonButton>*/}
 
                 </IonButtons>
-                <IonTitle onClick={() => history.push("/1")}>Help Elderly</IonTitle>
+
+                <IonTitle onClick={() => history.push("/1")}>
+                    <IonIcon
+                        slot="start"
+                        style={{fontSize: "30px"}}
+                        icon={sunnyOutline}/>
+                    <IonLabel>Help Elderly</IonLabel>
+                    </IonTitle>
             </IonToolbar>
         </IonHeader>)
 }

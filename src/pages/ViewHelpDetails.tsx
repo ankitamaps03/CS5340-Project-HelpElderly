@@ -24,8 +24,8 @@ const ViewHelpDetails: React.FC = () => {
             <TopPageHeader isLogin={isLogin} />
 
             <IonContent>
-                <Header name={"View Helper Details"} icon={helpBuoy} />
                 <ButtonForHome />
+                <Header name={"View Helper Details"} icon={helpBuoy} />
                 <HelperDetails />
             </IonContent>
         </IonPage>)

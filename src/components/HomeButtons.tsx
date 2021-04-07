@@ -1,5 +1,16 @@
 import './HomeButtons.css';
-import {IonButton} from "@ionic/react";
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonCol,
+    IonGrid,
+    IonImg,
+    IonRow
+} from "@ionic/react";
 import {useHistory, useParams} from "react-router-dom";
 import React from "react";
 
@@ -36,17 +47,53 @@ const HomeButtons: React.FC = () => {
 
     return (
         <div className="container">
-            <IonButton
-                color="primary"
-                onClick={() => redirect(0)}>
-                Request Help
-            </IonButton>
+            <IonGrid>
+                <IonRow>
+                    <IonCol size="6">
+                        <IonCard mode="md" className="homeCard">
+                            <IonCardHeader>
+                                <IonCardTitle>Request for help</IonCardTitle>
+                            </IonCardHeader>
+                            <IonCardContent>
+                                <div>
+                                    <IonImg
+                                        style={{width: "35%", display: "inline-block", marginBottom: "10px"}}
+                                        src="https://cdn3.iconfinder.com/data/icons/outline-color-common-5/32/help-add-512.png"/>
+                                </div>
+                                <IonButton
+                                    color="primary"
+                                    onClick={() => redirect(0)}>
+                                    Request Help
+                                </IonButton>
+                            </IonCardContent>
+                        </IonCard>
+
+                    </IonCol>
+                    <IonCol>
+                        <IonCard mode="md" className="homeCard">
+                            <IonCardHeader>
+                                <IonCardTitle>Offer help</IonCardTitle>
+                            </IonCardHeader>
+                            <IonCardContent>
+                                <div>
+                                    <IonImg
+                                        style={{width: "35%", display: "inline-block", marginBottom: "10px"}}
+                                        src="https://cdn2.iconfinder.com/data/icons/medical-2121/66/Medical_Care-512.png"/>
+                                </div>
+                                <IonButton
+                                    color="primary"
+                                    onClick={() => redirect(0)}>
+                                    Offer Help
+                                </IonButton>
+                            </IonCardContent>
+                        </IonCard>
+                    </IonCol>
+                </IonRow>
+            </IonGrid>
+
             <br/>
             <br/>
-            <IonButton
-                color="primary"
-                onClick={() => redirect(1)}>
-                Offer Help</IonButton>
+
         </div>
     );
 };

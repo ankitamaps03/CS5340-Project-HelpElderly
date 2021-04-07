@@ -23,7 +23,7 @@ const Modal = ({showExtraButtons = false, yesAction, primaryButtonText, noAction
             <IonButton
                 style={{width: "28%"}}
                 onClick={closeModal}>Close</IonButton>
-            <div style={{height: "100%"}}>{bodyText}</div>
+            <div style={{height: "100%",margin: "10px", fontSize : "large"}}>{bodyText}</div>
 
             <IonGrid>
                 <IonRow>

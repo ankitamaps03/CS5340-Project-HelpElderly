@@ -74,7 +74,7 @@ const LoginForm: React.FC = () => {
     }
     return (
 
-        <IonList style={{height: "80%"}}>
+        <IonList style={{height: "80%",     margin: "0px 25px 0px 25px"}}>
             <IonItem>
                 <IonLabel
                     color="primary"
