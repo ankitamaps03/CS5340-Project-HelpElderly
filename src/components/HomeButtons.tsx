@@ -82,7 +82,7 @@ const HomeButtons: React.FC = () => {
                                 </div>
                                 <IonButton
                                     color="primary"
-                                    onClick={() => redirect(0)}>
+                                    onClick={() => redirect(1)}>
                                     Offer Help
                                 </IonButton>
                             </IonCardContent>
