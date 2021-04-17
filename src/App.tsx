@@ -37,6 +37,7 @@ import AddRatingElderlyWoman from "./pages/AddRatingElderlyWoman";
 import AddRatingYoung from './components/AddRatingYoung';
 import ViewHistoryHelper from "./pages/ViewHistoryHelper";
 import HelpProvidedHelper from "./pages/HelpProvidedHelper";
+import Payment from "./pages/Payment";
 
 const App: React.FC = () => {
   return (
@@ -127,8 +128,9 @@ const App: React.FC = () => {
             <Route path="/helpProvidedHelper" exact={true}>
               <HelpProvidedHelper />
             </Route>
-
-
+            <Route path="/payment" exact={true}>
+              <Payment />
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

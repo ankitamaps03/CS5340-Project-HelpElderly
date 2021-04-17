@@ -17,7 +17,9 @@
     "antd": "^4.14.1",
     "ionicons": "^5.4.0",
     "react": "^17.0.1",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^17.0.1",
+    "react-payment": "^0.1.8",
     "react-rating-stars-component": "^2.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -62,5 +64,8 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "devDependencies": {
+    "@types/react-credit-cards": "^0.8.0"
+  }
 }
