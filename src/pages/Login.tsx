@@ -31,16 +31,16 @@ const Login: React.FC = () => {
             </IonToolbar>
         </IonHeader>
 
-        <IonContent fullscreen>
+        <IonContent>
             <ButtonForBack />
             <ButtonForHome />
-            <div className="container">
+            <div>
                 <IonGrid>
                     <IonRow>
                         <IonCol size="6">
                             <IonCard mode="md" className="homeCard">
                                 <IonCardHeader>
-                                    <IonCardTitle>Login if you already hav an account.</IonCardTitle>
+                                    <IonCardTitle>Login if you already have an account.</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
                                     <div>

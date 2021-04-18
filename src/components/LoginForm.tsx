@@ -60,7 +60,7 @@ const LoginForm: React.FC = () => {
             setShowLoading(true)
             setTimeout(() => {
                 setShowLoading(false);
-                history.push('/viewHelpDetails/1')
+                history.push('/payment/1')
             }, 2000);
 
         } else if (params.name == "helper") {
@@ -74,7 +74,7 @@ const LoginForm: React.FC = () => {
     }
     return (
 
-        <IonList style={{height: "80%",     margin: "0px 25px 0px 25px"}}>
+        <IonList style={{height: "80%", margin: "0 auto", width: "60%"}}>
             <IonItem>
                 <IonLabel
                     color="primary"
@@ -119,7 +119,9 @@ const LoginForm: React.FC = () => {
                              onIonChange={e => setRememberMe(e.detail.checked)}/>
             </div>
 
-            <div>
+
+            <div style={{marginTop: "50px"}}>
+
                 <IonButton color="primary"
                            onClick={redirect}>
                     Login

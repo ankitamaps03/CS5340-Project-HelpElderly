@@ -5,7 +5,8 @@ import {
     IonInput,
     IonItem,
     IonLabel,
-    IonList, IonLoading,
+    IonList,
+    IonLoading,
     IonSelect,
     IonSelectOption,
     IonTextarea
@@ -35,7 +36,7 @@ const RequestHelpForm: React.FC = () => {
                setShowLoading(true)
                setTimeout(() => {
                    setShowLoading(false);
-                   history.push('/viewHelpDetails')
+                   history.push('/payment')
                }, 2000);
            }
            else {
@@ -47,7 +48,7 @@ const RequestHelpForm: React.FC = () => {
     return (
 
         <IonContent>
-            <IonList>
+            <IonList className='request-help-form'>
                 <IonItem>
                     <IonLabel
                         color="primary"
@@ -57,7 +58,7 @@ const RequestHelpForm: React.FC = () => {
                         placeholder="Enter your location."
                         value={location}
                         required
-                        onIonChange={e => setLocation(e.detail.value!)}></IonInput>
+                        onIonChange={e => setLocation(e.detail.value!)}/>
                 </IonItem>
 
                 <IonItem>
@@ -86,7 +87,7 @@ const RequestHelpForm: React.FC = () => {
                         displayFormat="D MMM YYYY H:mm"
                         min="1997"
                         max="2050" value={when}
-                        onIonChange={e => setWhen(e.detail.value!)}></IonDatetime>
+                        onIonChange={e => setWhen(e.detail.value!)}/>
                 </IonItem>
                 <IonItem>
                     <IonLabel
@@ -96,7 +97,7 @@ const RequestHelpForm: React.FC = () => {
                         placeholder='Enter comments for  your help.'
                         clearOnEdit={true}
                         value={comments}
-                        onIonChange={e => setComments(e.detail.value!)}></IonTextarea>
+                        onIonChange={e => setComments(e.detail.value!)}/>
                 </IonItem>
                 <br/>
                 <IonButton color="primary"

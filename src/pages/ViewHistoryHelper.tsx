@@ -13,6 +13,8 @@ import './RequestHelp.css';
 import {listCircleSharp} from "ionicons/icons";
 import Header from "../components/Header";
 import TopPageHeader from "../components/TopPageHeader";
+// @ts-ignore
+import ReactStars from 'react-rating-stars-component';
 import React from "react";
 import {useHistory, useParams} from "react-router-dom";
 import ButtonForBack from "../components/ButtonForBack";
@@ -52,7 +54,18 @@ const ViewHistoryHelper: React.FC = () => {
                                     You helped <strong>Bob Marley</strong> with groceries on 29th March 2021, 03:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the person with 3 stars.
+                                    <div style={{float: "left"}}>
+                                        You rated the help with
+                                    </div>
+                                    <div style={{marginTop: "-15px"}}>
+                                        <ReactStars
+                                            count={5}
+                                            value={3}
+                                            edit={false}
+                                            size={30}
+                                            activeColor="#ffd700"
+                                        />
+                                    </div>
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
@@ -112,7 +125,18 @@ const ViewHistoryHelper: React.FC = () => {
                                     You helped <strong>Tony Stark </strong>  with technology related work on 23th March 2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the person with 5 stars.
+                                    <div style={{float: "left"}}>
+                                        You rated the help with
+                                    </div>
+                                    <div style={{marginTop: "-15px"}}>
+                                        <ReactStars
+                                            count={5}
+                                            value={5}
+                                            edit={false}
+                                            size={30}
+                                            activeColor="#ffd700"
+                                        />
+                                    </div>
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>

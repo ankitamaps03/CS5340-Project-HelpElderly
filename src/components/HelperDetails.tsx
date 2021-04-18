@@ -16,7 +16,7 @@ import {
 } from "@ionic/react";
 import './HelperDetails.css';
 import React, {useEffect, useState} from "react";
-import {chatbubble, checkmarkCircle, star, time} from "ionicons/icons";
+import {cashSharp, chatbubble, checkmarkCircle, star, time} from "ionicons/icons";
 import {useHistory} from "react-router-dom";
 import Modal from "./Modal";
 import { ToastContainer, toast } from 'react-toastify';
@@ -107,11 +107,24 @@ const HelperDetails: React.FC = () => {
 
                                 <IonItemDivider>
                                     <IonLabel style={{marginRight: "7px"}}>
-                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
+                                        <IonIcon style={{color: '#b83333', fontSize: '20px', marginTop: '2px'}}
                                                  icon={time}/>
                                     </IonLabel>
                                     <div className="helper-details">
                                         Estimated time is 30 minutes.
+                                    </div>
+                                </IonItemDivider>
+                            </IonCardContent>
+                        </IonRow>
+                        <IonRow>
+                            <IonCardContent style={{width: "100%"}}>
+                                <IonItemDivider>
+                                    <IonLabel style={{marginRight: "7px"}}>
+                                        <IonIcon style={{color: 'purple', fontSize: '20px', marginTop: '2px'}}
+                                                 icon={cashSharp}/>
+                                    </IonLabel>
+                                    <div className="helper-details">
+                                        You paid $55 using the Credit Card **** **** **** 1234
                                     </div>
                                 </IonItemDivider>
                             </IonCardContent>

@@ -131,6 +131,9 @@ const App: React.FC = () => {
             <Route path="/payment" exact={true}>
               <Payment />
             </Route>
+            <Route path="/payment/:id" exact={true}>
+              <Payment />
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

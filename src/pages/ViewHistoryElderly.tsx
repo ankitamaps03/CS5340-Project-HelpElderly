@@ -12,6 +12,8 @@ import {
 import './RequestHelp.css';
 import {listCircleSharp} from "ionicons/icons";
 import Header from "../components/Header";
+// @ts-ignore
+import ReactStars from 'react-rating-stars-component';
 import TopPageHeader from "../components/TopPageHeader";
 import React from "react";
 import {useHistory, useParams} from "react-router-dom";
@@ -52,7 +54,21 @@ const ViewHistoryElderly: React.FC = () => {
                                     <strong>Bob Marley</strong> helped you with groceries on 29th March 2021, 03:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the help with 4 stars.
+                                    You paid <strong>55$</strong> using the Credit Card **** **** **** 1234
+                                </IonCardContent>
+                                <IonCardContent>
+                                    <div style={{float: "left"}}>
+                                        You rated the help with
+                                    </div>
+                                    <div style={{marginTop: "-15px"}}>
+                                        <ReactStars
+                                            count={5}
+                                            value={4}
+                                            edit={false}
+                                            size={30}
+                                            activeColor="#ffd700"
+                                        />
+                                    </div>
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
@@ -83,6 +99,9 @@ const ViewHistoryElderly: React.FC = () => {
                             <IonCol>
                                 <IonCardContent>
                                     <strong>Diana Prince </strong>helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                </IonCardContent>
+                                <IonCardContent>
+                                    You paid <strong>35$</strong> using the Credit Card **** **** **** 6678
                                 </IonCardContent>
                                 <IonCardContent>
                                     You have not rated this help.
@@ -119,10 +138,25 @@ const ViewHistoryElderly: React.FC = () => {
                             </IonCol>
                             <IonCol>
                                 <IonCardContent>
-                                    <strong>Tony Stark </strong> helped you with technology related work on 23th March 2021, 12:00 PM (EST)
+                                    <strong>Tony Stark </strong> helped you with technology related work on 23th March
+                                    2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
-                                    You rated the help with 5 stars.
+                                    You paid <strong>60$</strong> using the Credit Card **** **** **** 9876
+                                </IonCardContent>
+                                <IonCardContent>
+                                    <div style={{float: "left"}}>
+                                        You rated the help with
+                                    </div>
+                                    <div style={{marginTop: "-15px"}}>
+                                        <ReactStars
+                                            count={5}
+                                            value={5}
+                                            edit={false}
+                                            size={30}
+                                            activeColor="#ffd700"
+                                        />
+                                    </div>
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>

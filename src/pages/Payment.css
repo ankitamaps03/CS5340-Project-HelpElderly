@@ -3,6 +3,7 @@
     max-width: 1000px;
     flex: 3;
     margin-top: 30px;
+    margin: 0 auto;
 }
 .card-details {
     border: 1px solid #ccc;
@@ -18,6 +19,7 @@
 }
 .card-details-small{
     flex: 2;
+    width: 49%;
     border: 1px solid #ccc;
     border-radius: 6px;
     box-shadow: none;

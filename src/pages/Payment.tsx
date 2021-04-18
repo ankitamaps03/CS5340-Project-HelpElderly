@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import {
+    IonButton,
     IonCard,
     IonCardContent,
     IonCardHeader,
@@ -18,6 +19,8 @@ import ButtonForBack from "../components/ButtonForBack";
 import ButtonForHome from "../components/ButtonForHome";
 import {cashSharp} from "ionicons/icons";
 import Header from "../components/Header";
+import {useHistory, useParams} from "react-router-dom";
+import TopPageHeader from "../components/TopPageHeader";
 
 const Payment = () => {
 
@@ -26,8 +29,16 @@ const Payment = () => {
     const [focus, setFocus] = useState()
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
+    let history = useHistory();
 
-
+    let params = {
+        id: ''
+    }
+    params = useParams();
+    let isLogin = false;
+    if (params.id) {
+        isLogin = true;
+    }
     const handleInputFocus = (e: any) => {
         setFocus(e.target.name);
     }
@@ -38,22 +49,21 @@ const Payment = () => {
         setNumber(value);
     }
 
+    const redirectToHelperPage = () => {
+        history.push('/viewHelpDetails/1')
+    }
+
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar color="head">
-                    <IonTitle>Login to Help Elderly</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-
+            <TopPageHeader isLogin={isLogin} />
             <IonContent>
                 <ButtonForBack/>
                 <ButtonForHome/>
-                <Header name="Add payment details" icon={cashSharp}/>
+                <Header name="Make payment" icon={cashSharp}/>
                 <div id="PaymentForm" className='payment-main'>
                     <IonCard style={{height: "100%", width:"100%"}}>
                         <IonCardHeader>
-                            <IonCardSubtitle>Please make a payment using the below options</IonCardSubtitle>
+                            <IonCardSubtitle>Please make a payment using Credit/Debit card</IonCardSubtitle>
                             <IonCardTitle>The amount to be paid to Bob Marley: $55</IonCardTitle>
                         </IonCardHeader>
                         <IonCardContent>
@@ -91,7 +101,7 @@ const Payment = () => {
                                         className='card-details-small'
                                         type="tel"
                                         name="expiry"
-                                        placeholder="Valid through"
+                                        placeholder="Valid through (Enter in MM/YY format)"
                                         onChange={(e) => setExpiry(e.target.value)}
                                         onFocus={handleInputFocus}
                                     />
@@ -104,7 +114,12 @@ const Payment = () => {
                                         onFocus={handleInputFocus}
                                     />
                                 </div>
-
+                                < br />
+                                <IonButton
+                                    onClick={redirectToHelperPage}
+                                    color="primary">
+                                    Make payment
+                                </IonButton>
                             </form>
                         </IonCardContent>
                     </IonCard>

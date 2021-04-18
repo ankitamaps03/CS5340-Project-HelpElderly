@@ -17,7 +17,7 @@ const LoginAccount: React.FC = () => {
                 <ButtonForBack />
                 <ButtonForHome />
                 <Header name={'Login'} icon={logIn} />
-                <div style={{top: "65%", height: "100%"}} className="container">
+                <div style={{top: "65%", height: "100%"}} >
                     <LoginForm />
                 </div>
             </IonContent>
