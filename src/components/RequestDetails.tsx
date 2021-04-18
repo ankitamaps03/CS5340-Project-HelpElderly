@@ -1,9 +1,9 @@
 import {
-    IonAvatar, IonButton,
+    IonAvatar,
+    IonButton,
     IonCard,
     IonCardContent,
     IonCardHeader,
-    IonCardSubtitle,
     IonCol,
     IonContent,
     IonGrid,
@@ -14,15 +14,15 @@ import {
     IonRow
 } from "@ionic/react";
 import './RequestHelpForm.css';
-import React, { useState } from "react";
-import {chatbubble, hammer, helpSharp, newspaperSharp, pin, timerOutline} from "ionicons/icons";
+import React, {useState} from "react";
+import {cash, chatbubble, hammer, newspaperSharp, pin, timerOutline} from "ionicons/icons";
 import TopPageHeader from "./TopPageHeader";
 import Header from "./Header";
 import ButtonForBack from "./ButtonForBack";
 import ButtonForHome from "./ButtonForHome";
 import Modal from "./Modal";
-import { ToastContainer, toast } from 'react-toastify';
-import { useHistory } from "react-router";
+import {toast, ToastContainer} from 'react-toastify';
+import {useHistory} from "react-router";
 import {useParams} from "react-router-dom";
 
 const RequestDetails: React.FC = () => {
@@ -92,25 +92,34 @@ const RequestDetails: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol>
-                                <IonItemDivider>
-                                    <IonLabel style={{marginRight: "7px"}}>
-                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
-                                                 icon={hammer}/>
-                                    </IonLabel>
-                                    <IonLabel>
-                                        <strong>Help Requested:</strong> Grocery Pick-up
-                                    </IonLabel>
-                                </IonItemDivider>
-                                <IonItemDivider>
-                                    <IonLabel style={{marginRight: "7px"}}>
-                                        <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
-                                                 icon={timerOutline}/>
-                                    </IonLabel>
-                                    <IonLabel>
-                                        <strong> When: </strong>30th March 2021, 03:00PM (EST)
-                                    </IonLabel>
-                                </IonItemDivider>
-                                <IonItemDivider>
+                                    <IonItemDivider>
+                                        <IonLabel style={{marginRight: "7px"}}>
+                                            <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
+                                                     icon={hammer}/>
+                                        </IonLabel>
+                                        <IonLabel>
+                                            <strong>Help Requested:</strong> Grocery Pick-up
+                                        </IonLabel>
+                                    </IonItemDivider>
+                                    <IonItemDivider>
+                                        <IonLabel style={{marginRight: "7px"}}>
+                                            <IonIcon style={{color: 'purple', fontSize: '20px', marginTop: '2px'}}
+                                                     icon={cash}/>
+                                        </IonLabel>
+                                        <IonLabel>
+                                            <strong>Amount to be paid:</strong> 55$
+                                        </IonLabel>
+                                    </IonItemDivider>
+                                    <IonItemDivider>
+                                        <IonLabel style={{marginRight: "7px"}}>
+                                            <IonIcon style={{color: '#b83333', fontSize: '20px', marginTop: '2px'}}
+                                                     icon={timerOutline}/>
+                                        </IonLabel>
+                                        <IonLabel>
+                                            <strong> When: </strong>30th March 2021, 03:00PM (EST)
+                                        </IonLabel>
+                                    </IonItemDivider>
+                                    <IonItemDivider>
                                     <div style={{marginRight: "4px"}}>
                                         <IonIcon style={{color: '', fontSize: '20px', marginTop: '2px'}}
                                                  icon={chatbubble}/>
