@@ -54,6 +54,9 @@ const ViewHistoryHelper: React.FC = () => {
                                     You helped <strong>Bob Marley</strong> with groceries on 29th March 2021, 03:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
+                                    You received a payment of <strong>55$</strong> for the help provided.
+                                </IonCardContent>
+                                <IonCardContent>
                                     <div style={{float: "left"}}>
                                         You rated the help with
                                     </div>
@@ -93,6 +96,9 @@ const ViewHistoryHelper: React.FC = () => {
                                    You helped <strong>Diana Prince</strong> with technology related work on 23th March 2021, 12:00 PM (EST)
                                 </IonCardContent>
                                 <IonCardContent>
+                                    You received a payment of <strong>30$</strong> for the help provided.
+                                </IonCardContent>
+                                <IonCardContent>
                                     You have not rated this help.
                                 </IonCardContent>
                             </IonCol>
@@ -123,6 +129,9 @@ const ViewHistoryHelper: React.FC = () => {
                             <IonCol>
                                 <IonCardContent>
                                     You helped <strong>Tony Stark </strong>  with technology related work on 23th March 2021, 12:00 PM (EST)
+                                </IonCardContent>
+                                <IonCardContent>
+                                    You received a payment of <strong>25$</strong> for the help provided.
                                 </IonCardContent>
                                 <IonCardContent>
                                     <div style={{float: "left"}}>

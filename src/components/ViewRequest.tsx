@@ -102,6 +102,9 @@ const ViewRequest: React.FC = () => {
                                   Location: 1191 Boylston street, Boston
                               </IonCardContent>
                               <IonCardContent>
+                                  Amount to be paid: 55$
+                              </IonCardContent>
+                              <IonCardContent>
                                   Comments: Pick up one gallon of milk and a dozed bananas. Address is Star Market, 1330 Boylston St, Boston MA. Call me if you any information
                               </IonCardContent>
                           </IonCol>
@@ -146,6 +149,9 @@ const ViewRequest: React.FC = () => {
                           <IonCol>
                               <IonCardContent>
                                   Location: 877 Huntington ave, Boston
+                              </IonCardContent>
+                              <IonCardContent>
+                                  Amount to be paid: 35$
                               </IonCardContent>
                               <IonCardContent>
                                   Comments: Help me set up Zoom on my laptop. Call me for more details.
