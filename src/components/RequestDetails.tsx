@@ -9,7 +9,6 @@ import {
     IonGrid,
     IonIcon,
     IonItemDivider,
-    IonLabel,
     IonPage,
     IonRow
 } from "@ionic/react";
@@ -24,6 +23,7 @@ import Modal from "./Modal";
 import {toast, ToastContainer} from 'react-toastify';
 import {useHistory} from "react-router";
 import {useParams} from "react-router-dom";
+import '../pages/RequestHelp.css';
 
 const RequestDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
@@ -78,58 +78,69 @@ const RequestDetails: React.FC = () => {
                 <IonCard style={{height: "100%"}}>
                     <IonCardHeader>
                         <IonIcon icon={pin} slot="start"/>
-                        <IonCardHeader>Meet Alice Hyatt at 1191 Boylston St, Boston MA 02215</IonCardHeader>
+                        <IonCardHeader className="helper-heading">Meet Alice Hyatt at 1191 Boylston St, Boston MA,
+                            02215</IonCardHeader>
 
                     </IonCardHeader>
                     <IonCardContent>
                         <IonGrid>
                             <IonRow>
                                 <IonCol size="3">
-                                    <IonAvatar>
+                                    <IonAvatar className='user-avatar'>
                                         <img
                                             src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
                                 </IonCol>
 
                                 <IonCol>
-                                    <IonItemDivider>
-                                        <IonLabel style={{marginRight: "7px"}}>
-                                            <IonIcon style={{color: 'black', fontSize: '20px', marginTop: '2px'}}
-                                                     icon={hammer}/>
-                                        </IonLabel>
-                                        <IonLabel>
-                                            <strong>Help Requested:</strong> Grocery Pick-up
-                                        </IonLabel>
-                                    </IonItemDivider>
-                                    <IonItemDivider>
-                                        <IonLabel style={{marginRight: "7px"}}>
-                                            <IonIcon style={{color: 'purple', fontSize: '20px', marginTop: '2px'}}
-                                                     icon={cash}/>
-                                        </IonLabel>
-                                        <IonLabel>
-                                            <strong>Amount to be paid:</strong> 55$
-                                        </IonLabel>
-                                    </IonItemDivider>
-                                    <IonItemDivider>
-                                        <IonLabel style={{marginRight: "7px"}}>
-                                            <IonIcon style={{color: '#b83333', fontSize: '20px', marginTop: '2px'}}
-                                                     icon={timerOutline}/>
-                                        </IonLabel>
-                                        <IonLabel>
-                                            <strong> When: </strong>30th March 2021, 03:00PM (EST)
-                                        </IonLabel>
-                                    </IonItemDivider>
-                                    <IonItemDivider>
-                                    <div style={{marginRight: "4px"}}>
-                                        <IonIcon style={{color: '', fontSize: '20px', marginTop: '2px'}}
-                                                 icon={chatbubble}/>
-                                    </div>
-                                    <div>
-                                        <strong>Comments:</strong> Pick up one gallon of milk and a dozen bananas.
-                                        Address is Star
-                                        Market, 1330 Boylston St, Boston MA. Call me if you need any information.
-                                    </div>
-                                </IonItemDivider>
+                                    <IonCardContent style={{width: "100%"}}>
+                                        <IonItemDivider>
+                                            <div className="helper-details">
+                                                <IonIcon style={{
+                                                    color: 'black',
+                                                    fontSize: '30px',
+                                                    marginTop: '2px',
+                                                    marginRight: '10px'
+                                                }}
+                                                         icon={hammer}/>
+                                                <strong>Help Requested:</strong> Grocery Pick-up
+                                            </div>
+                                        </IonItemDivider>
+                                    </IonCardContent>
+                                    <IonCardContent style={{width: "100%"}}>
+                                        <IonItemDivider>
+                                            <div className="helper-details">
+                                                <IonIcon style={{color: 'purple', fontSize: '30px', marginTop: '2px',  marginRight: '10px'}}
+                                                         icon={cash}/>
+                                                <strong>Amount to be paid:</strong> 55$
+                                            </div>
+                                        </IonItemDivider>
+                                    </IonCardContent>
+                                    <IonCardContent style={{width: "100%"}}>
+                                        <IonItemDivider>
+                                            <div className="helper-details">
+                                                <IonIcon style={{color: '#b83333', fontSize: '30px', marginTop: '2px',  marginRight: '10px'}}
+                                                         icon={timerOutline}/>
+                                                <strong> When: </strong>30th March 2021, 03:00PM (EST)
+                                            </div>
+                                        </IonItemDivider>
+                                    </IonCardContent>
+                                    <IonCardContent style={{width: "100%"}}>
+                                        <IonItemDivider>
+                                            <div className="helper-details">
+
+                                                <IonIcon style={{color: '', fontSize: '30px', marginTop: '2px',  marginRight: '10px'}}
+                                                         icon={chatbubble}/>
+
+                                                <strong>Comments:</strong> Pick up one gallon of milk and a dozen
+                                                bananas.
+                                                Address is Star Market, 1330 Boylston St, Boston MA. Call me if you need
+                                                any
+                                                information.
+
+                                            </div>
+                                        </IonItemDivider>
+                                    </IonCardContent>
                             </IonCol>
                       </IonRow>
                             <IonRow>

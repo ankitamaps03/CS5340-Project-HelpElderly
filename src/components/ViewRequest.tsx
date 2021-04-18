@@ -6,12 +6,12 @@ import {
     IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,
     IonCol,
     IonContent,
-    IonGrid,
+    IonGrid, IonIcon,
     IonItem,
     IonPage,
     IonRow
 } from "@ionic/react";
-import {book} from "ionicons/icons";
+import {book, cashSharp, chatbubble, hammerOutline, happy, map} from "ionicons/icons";
 import Header from "./Header";
 import TopPageHeader from "./TopPageHeader";
 import React, { useState } from "react";
@@ -19,6 +19,7 @@ import {useHistory, useParams} from "react-router-dom";
 import ButtonForBack from "./ButtonForBack";
 import ButtonForHome from "./ButtonForHome";
 import Modal from "./Modal";
+import "../pages/ViewHistoryElderly.css"
 
 
 const ViewRequest: React.FC = () => {
@@ -40,32 +41,6 @@ const ViewRequest: React.FC = () => {
 
   }
 
-//   const hideAcceptButton = (id: number) =>{
-//     var x = document.getElementById("requestButtons"+id);
-//     if(x!=null){
-//         x.style.display = "none";
-//     }
-//   }
-//   const showDeclinedMessage=(id: number)=>{
-//     var y = document.getElementById("declinedMessage"+id);
-//     if(y!=null){
-//         y.style.display = "block";
-//     }
-//   }
-//   const showAcceptedMessage=(id: number)=>{
-//     var y = document.getElementById("acceptedMessage"+id);
-//     if(y!=null){
-//         y.style.display = "block";
-//     }
-//   }
-//   const hideButtonsForDeclined = (id: number) =>{
-//     hideAcceptButton(id)
-//     showDeclinedMessage(id)
-//   };
-//   const hideButtonsForAccepted = (id: number) =>{
-//     hideAcceptButton(id)
-//     showAcceptedMessage(id)
-//   };
   const redirectToRequestDetail =()=>{
         if(params.id) {
             setShowModal1(false)
@@ -92,19 +67,28 @@ const ViewRequest: React.FC = () => {
 
                       <IonRow>
                           <IonCol size="3">
-                              <IonAvatar>
+                              <IonAvatar className="user-avatar">
                                   <img
                                       src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                               </IonAvatar>
                           </IonCol>
                           <IonCol>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{color: 'black', fontSize: '30px', marginRight: '10px'}}
+                                      icon={map}/>
                                   Location: 1191 Boylston street, Boston
                               </IonCardContent>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{color: 'purple', fontSize: '30px', marginRight: '10px'}}
+                                      icon={cashSharp}/>
                                   Amount to be paid: 55$
                               </IonCardContent>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{ fontSize: '30px', marginRight: '10px', float: 'left'}}
+                                      icon={chatbubble}/>
                                   Comments: Pick up one gallon of milk and a dozed bananas. Address is Star Market, 1330 Boylston St, Boston MA. Call me if you any information
                               </IonCardContent>
                           </IonCol>
@@ -124,7 +108,7 @@ const ViewRequest: React.FC = () => {
                   </div>}
                   <div id="acceptedMessage1" style={{ display: "none"}}>
                   <IonItem color="secondary">
-                    Request Acceped
+                    Request Accepted
                     </IonItem>
                   </div>
                   {declined1 && <div id="declinedMessage1" >
@@ -141,19 +125,28 @@ const ViewRequest: React.FC = () => {
                   <IonGrid>
                       <IonRow>
                           <IonCol size="3">
-                              <IonAvatar>
+                              <IonAvatar className="user-avatar">
                                   <img
                                       src="https://c8.alamy.com/comp/2ATH5M7/colourful-male-face-circle-in-flat-style-cartoon-vector-icon-modern-design-men-face-person-silhouette-avatar-profile-round-portrait-isolated-2ATH5M7.jpg"/>
                               </IonAvatar>
                           </IonCol>
                           <IonCol>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{color: 'black', fontSize: '30px', marginRight: '10px'}}
+                                      icon={map}/>
                                   Location: 877 Huntington ave, Boston
                               </IonCardContent>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{color: 'purple', fontSize: '30px', marginRight: '10px'}}
+                                      icon={cashSharp}/>
                                   Amount to be paid: 35$
                               </IonCardContent>
-                              <IonCardContent>
+                              <IonCardContent className='helper-details'>
+                                  <IonIcon
+                                      style={{ fontSize: '30px', marginRight: '10px', float: 'left'}}
+                                      icon={chatbubble}/>
                                   Comments: Help me set up Zoom on my laptop. Call me for more details.
                               </IonCardContent>
                           </IonCol>
@@ -182,34 +175,6 @@ const ViewRequest: React.FC = () => {
                     </IonItem>
                   </div>}
               </IonCard>
-              {/* <IonAlert
-          isOpen={showAlert1}
-          onDidDismiss={() => setShowAlert1(false)}
-          cssClass='my-custom-class'
-          header={'Alert'}
-          message={'Did you take Covid test in past 2 days or have you been vaccinated?'}
-          buttons={[{
-              text: 'Yes',
-              handler: () => {
-                  setCovidTested(true)
-                  history.push('/requestDetails')
-              }
-
-          },{
-            text: 'No',
-            role: "cancel",
-            cssClass: 'secondary',
-            handler: () => setShowAlert2(true)
-          }]}
-        /> */}
-        {/* <IonAlert
-          isOpen={showAlert2}
-          onDidDismiss={() => setShowAlert2(false)}
-          cssClass='my-custom-class'
-          header={'Alert'}
-          message={'Kindly take Covid test and visit us again.'}
-          buttons={['OK']}
-        /> */}
         <Modal showModal={showModal1}
                    yesAction={() =>{
                     setCovidTested(true)

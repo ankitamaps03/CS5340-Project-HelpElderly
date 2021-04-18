@@ -75,7 +75,7 @@ const HelperDetails: React.FC = () => {
                     <IonGrid>
                         <IonRow>
                             <IonCol size="2">
-                                <IonAvatar style={{width: "160px", height: "160px"}}>
+                                <IonAvatar className='user-avatar'>
                                     <img
                                         src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
                                 </IonAvatar>
@@ -103,8 +103,6 @@ const HelperDetails: React.FC = () => {
                         </IonRow>
                         <IonRow>
                             <IonCardContent style={{width: "100%"}}>
-
-
                                 <IonItemDivider>
                                     <IonLabel style={{marginRight: "7px"}}>
                                         <IonIcon style={{color: '#b83333', fontSize: '20px', marginTop: '2px'}}

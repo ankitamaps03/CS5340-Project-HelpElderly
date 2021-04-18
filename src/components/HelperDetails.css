@@ -2,6 +2,11 @@
     background-color: #7e6597 !important;
 }
 
+.user-avatar {
+    width: 160px;
+    height: 160px;
+}
+
 .helper-details {
     font-size: 20px;
     color: black !important;
