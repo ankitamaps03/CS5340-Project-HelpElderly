@@ -1,0 +1,18 @@
+.user-avatar {
+    width: 160px;
+    height: 160px;
+}
+
+.helper-details {
+    font-size: 20px;
+    color: black !important;
+}
+
+.helper-heading {
+    font-size: 30px;
+
+}
+
+.helper-rating{
+    margin-top: -10px;
+}
