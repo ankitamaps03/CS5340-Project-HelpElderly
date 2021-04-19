@@ -1,8 +1,19 @@
-import {IonButton, IonButtons, IonHeader, IonIcon, IonLabel, IonPopover, IonTitle, IonToolbar} from "@ionic/react";
+import {
+    IonButton,
+    IonButtons,
+    IonHeader,
+    IonIcon,
+    IonImg,
+    IonLabel,
+    IonPopover,
+    IonTitle,
+    IonToolbar
+} from "@ionic/react";
 import {personCircle, sunnyOutline} from "ionicons/icons";
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import ButtonForHistory from "./ButtonForHistory";
+import helpElderlyIcon from '../images/help_elderly_icon.png';
 
 type TopPageHeaderProps = {
     isLogin: boolean,
@@ -104,8 +115,12 @@ const TopPageHeader = ({isLogin, showLogin = true, showViewHistory = true}: TopP
                         slot="start"
                         style={{fontSize: "30px"}}
                         icon={sunnyOutline}/>
-                    <IonLabel>Help Elderly</IonLabel>
-                    </IonTitle>
+                    <IonLabel>
+                        <IonImg
+                            style={{width: "120px", cursor: "pointer", background: "#e9dafd"}}
+                            src={helpElderlyIcon}/>
+                    </IonLabel>
+                </IonTitle>
             </IonToolbar>
         </IonHeader>)
 }

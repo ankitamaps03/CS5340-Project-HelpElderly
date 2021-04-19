@@ -85,7 +85,7 @@ const ViewRequest: React.FC = () => {
                                   <IonIcon
                                       style={{color: 'purple', fontSize: '30px', marginRight: '10px'}}
                                       icon={cashSharp}/>
-                                  Amount to be paid: 55$
+                                  Amount to be paid: 15$
                               </IonCardContent>
                               <IonCardContent className='helper-details'>
                                   <IonIcon

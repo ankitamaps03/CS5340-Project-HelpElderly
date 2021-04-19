@@ -61,7 +61,7 @@ const ViewHistoryHelper: React.FC = () => {
                                     <IonIcon
                                         style={{color: 'purple', fontSize: '30px', marginRight: '10px'}}
                                         icon={cashSharp}/>
-                                    You received a payment of <strong>55$</strong> for the help provided.
+                                    You received a payment of <strong>15$</strong> for the help provided.
                                 </IonCardContent>
                                 <IonCardContent className='helper-details'>
                                     <IonIcon

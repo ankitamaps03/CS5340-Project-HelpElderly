@@ -61,7 +61,7 @@ const ViewHistoryElderly: React.FC = () => {
                                     <IonIcon
                                         style={{color: 'purple', fontSize: '30px', marginRight: '10px'}}
                                         icon={cashSharp}/>
-                                    You paid <strong>55$</strong> using the Credit Card **** **** **** 1234
+                                    You paid <strong>15$</strong> using the Credit Card **** **** **** 1234
                                 </IonCardContent>
                                 <IonCardContent className='helper-details'>
                                     <IonIcon

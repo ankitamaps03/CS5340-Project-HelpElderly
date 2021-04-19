@@ -136,7 +136,7 @@ const RequestDetails: React.FC = () => {
                                             <div className="helper-details">
                                                 <IonIcon style={{color: 'purple', fontSize: '30px', marginTop: '2px',  marginRight: '10px'}}
                                                          icon={cash}/>
-                                                <strong>Amount to be paid:</strong> 55$
+                                                <strong>Amount to be paid:</strong> 15$
                                             </div>
                                         </IonItemDivider>
                                     </IonCardContent>

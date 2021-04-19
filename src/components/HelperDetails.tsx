@@ -84,7 +84,7 @@ const HelperDetails: React.FC = () => {
                                 <IonButton
                                     color="secondary"
                                     onClick={() => setShowCallerDetails(true)}>
-                                    Call Helper
+                                    View Contact Information
                                 </IonButton>
                             </IonCol>
                             <IonCol size="4">
@@ -125,7 +125,7 @@ const HelperDetails: React.FC = () => {
                                                  icon={cashSharp}/>
                                     </IonLabel>
                                     <div className="helper-details">
-                                        You paid $55 using the Credit Card **** **** **** 1234
+                                        You paid $15 using the Credit Card **** **** **** 1234
                                     </div>
                                 </IonItemDivider>
                             </IonCardContent>
