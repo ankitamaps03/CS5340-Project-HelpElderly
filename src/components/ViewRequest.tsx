@@ -20,6 +20,7 @@ import ButtonForBack from "./ButtonForBack";
 import ButtonForHome from "./ButtonForHome";
 import Modal from "./Modal";
 import "../pages/ViewHistoryElderly.css"
+import Map from "./Map";
 
 
 const ViewRequest: React.FC = () => {
@@ -72,6 +73,7 @@ const ViewRequest: React.FC = () => {
                                       src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                               </IonAvatar>
                           </IonCol>
+                          <IonCol><Map height='200px'/></IonCol>
                           <IonCol>
                               <IonCardContent className='helper-details'>
                                   <IonIcon
@@ -130,6 +132,7 @@ const ViewRequest: React.FC = () => {
                                       src="https://c8.alamy.com/comp/2ATH5M7/colourful-male-face-circle-in-flat-style-cartoon-vector-icon-modern-design-men-face-person-silhouette-avatar-profile-round-portrait-isolated-2ATH5M7.jpg"/>
                               </IonAvatar>
                           </IonCol>
+                          <IonCol><Map height='200px'/></IonCol>
                           <IonCol>
                               <IonCardContent className='helper-details'>
                                   <IonIcon

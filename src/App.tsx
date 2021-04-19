@@ -94,7 +94,7 @@ const App: React.FC = () => {
             <Route path="/viewRequest/:id" exact={true}>
               <ViewRequest/>
             </Route>
-            <Route path="/requestDetails" exact={true}>
+            <Route path="/requestDetails/" exact={true}>
               <RequestDetails/>
             </Route>
             <Route path="/requestDetails/:id" exact={true}>
@@ -115,7 +115,7 @@ const App: React.FC = () => {
             <Route path="/addRatingElderlyWoman/1" exact={true}>
               < AddRatingElderlyWoman/>
             </Route>
-            <Route path="/viewHistoryElderly" exact={true}>
+            <Route path="/viewHistoryElderly" >
               < ViewHistoryElderly/>
             </Route>
 

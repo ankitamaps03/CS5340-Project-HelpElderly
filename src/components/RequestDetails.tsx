@@ -24,6 +24,7 @@ import {toast, ToastContainer} from 'react-toastify';
 import {useHistory} from "react-router";
 import {useParams} from "react-router-dom";
 import '../pages/RequestHelp.css';
+import Map from "./Map";
 
 const RequestDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
@@ -90,8 +91,31 @@ const RequestDetails: React.FC = () => {
                                         <img
                                             src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
                                     </IonAvatar>
-                                </IonCol>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <IonRow>
+                                        <IonButton
+                                            color="secondary"
+                                            onClick={() => setShowCallerDetails(true)}>
+                                            Call
+                                        </IonButton>
 
+                                        { startHelp && <IonButton id="startHelp"
+                                                                  color="secondary"
+                                                                  onClick={startHelping}>
+                                            Start Helping
+                                        </IonButton>}
+                                        {startHelp == false &&
+                                        <IonButton id="finishHelp"
+                                                   color="secondary"
+                                                   onClick={finishedHelping}>
+                                            Finished Helping?
+                                        </IonButton>
+                                        }
+                                    </IonRow>
+                                </IonCol>
+                                <IonCol><Map height='400px'/></IonCol>
                                 <IonCol>
                                     <IonCardContent style={{width: "100%"}}>
                                         <IonItemDivider>
@@ -143,26 +167,7 @@ const RequestDetails: React.FC = () => {
                                     </IonCardContent>
                             </IonCol>
                       </IonRow>
-                            <IonRow>
-                                <IonButton
-                                    color="secondary"
-                                    onClick={() => setShowCallerDetails(true)}>
-                                    Call
-                                </IonButton>
 
-                                { startHelp && <IonButton id="startHelp"
-                                    color="secondary"
-                                    onClick={startHelping}>
-                                    Start Helping
-                                </IonButton>}
-                                {startHelp == false &&
-                                <IonButton id="finishHelp"
-                                           color="secondary"
-                                           onClick={finishedHelping}>
-                                    Finished Helping?
-                                </IonButton>
-                                }
-                            </IonRow>
 
                         </IonGrid>
               </IonCardContent>

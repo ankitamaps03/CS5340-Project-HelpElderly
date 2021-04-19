@@ -21,6 +21,7 @@ import {useHistory} from "react-router-dom";
 import Modal from "./Modal";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Map from "./Map";
 
 const HelperDetails: React.FC = () => {
 
@@ -86,7 +87,7 @@ const HelperDetails: React.FC = () => {
                                     Call Helper
                                 </IonButton>
                             </IonCol>
-                            <IonCol>
+                            <IonCol size="4">
                                 <div className="helper-details">
                                     <IonIcon
                                     style={{color: 'green', fontSize: '30px', marginRight: '10px'}}
@@ -100,6 +101,8 @@ const HelperDetails: React.FC = () => {
                                     Bob Marley has a 4 star rating.
                                 </div>
                             </IonCol>
+                            <IonCol><Map height='400px'/></IonCol>
+
                         </IonRow>
                         <IonRow>
                             <IonCardContent style={{width: "100%"}}>

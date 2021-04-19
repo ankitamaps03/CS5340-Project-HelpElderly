@@ -5,13 +5,16 @@ import Marker from "./Marker"
 import {hammerOutline, pin, pintOutline} from "ionicons/icons";
 import {IonIcon} from "@ionic/react";
 
+type MapContainerProps = {
+    height: string
+}
 
-export class MapContainer extends Component {
+const Map = ({height} : MapContainerProps) => {
 
-    render() {
+
         return (
             // Important! Always set the container height explicitly
-            <div style={{ height: '400px', width: '100%' }}>
+            <div style={{ height: height, width: '100%' }}>
                 <GoogleMapReact
                     zoom={17}
                     bootstrapURLKeys={{ key: 'AIzaSyAqh5CoSYFLsc4vF2sJLkNwzPresIamyNA' }}
@@ -27,7 +30,6 @@ export class MapContainer extends Component {
                 </GoogleMapReact>
             </div>
         );
-    }
 }
 
-export default MapContainer
+export default Map

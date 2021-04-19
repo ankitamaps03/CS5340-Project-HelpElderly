@@ -12,9 +12,9 @@ import {
     IonTextarea
 } from "@ionic/react";
 import './RequestHelpForm.css';
-import {useState} from "react";
+import React, {useState} from "react";
 import {useHistory, useParams} from "react-router-dom";
-import {MapContainer} from "./Map";
+import Map from "./Map";
 
 
 const RequestHelpForm: React.FC = () => {
@@ -50,7 +50,7 @@ const RequestHelpForm: React.FC = () => {
 
         <IonContent>
             <IonList className='request-help-form'>
-                <MapContainer />
+                <Map height='400px'/>
                 <IonItem>
                     <IonLabel
                         color="primary"
