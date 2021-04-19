@@ -29,6 +29,7 @@ import Map from "./Map";
 const RequestDetails: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
     const [showCallerDetails, setShowCallerDetails] = useState(false);
+    const [showHelpStarted, setShowHelpStarted] = useState(false);
     const [startHelp, setStartHelp] = useState(true)
     let params = {
         id: ''
@@ -52,6 +53,11 @@ const RequestDetails: React.FC = () => {
         });
 
     }
+
+    const closeHelpingModal = () => {
+        setShowHelpStarted(false);
+    }
+
     const redirectToRating = () => {
         setShowModal(false)
         history.push('/addRatingYoung')
@@ -61,10 +67,15 @@ const RequestDetails: React.FC = () => {
         setShowModal(false)
         history.push('/1')
     }
-    const startHelping = () =>{
-        if(startHelp){
-           setStartHelp(false)
+    const startHelping = () => {
+        if (startHelp) {
+            setShowHelpStarted(true);
+            setStartHelp(false)
         }
+
+        setTimeout(() => {
+            setShowHelpStarted(false);
+        }, 7000);
     }
     const finishedHelping=()=>{
         setShowModal(true)
@@ -89,7 +100,7 @@ const RequestDetails: React.FC = () => {
                                 <IonCol size="3">
                                     <IonAvatar className='user-avatar'>
                                         <img
-                                            src="https://cdn3.vectorstock.com/i/1000x1000/71/87/male-avatar-profile-icon-round-man-face-vector-18307187.jpg"/>
+                                            src="https://cdn3.vectorstock.com/i/1000x1000/95/22/old-woman-avatar-round-icon-vector-24929522.jpg"/>
                                     </IonAvatar>
                                     <br />
                                     <br />
@@ -165,41 +176,48 @@ const RequestDetails: React.FC = () => {
                                             </div>
                                         </IonItemDivider>
                                     </IonCardContent>
-                            </IonCol>
-                      </IonRow>
+                                </IonCol>
+                            </IonRow>
 
 
                         </IonGrid>
-              </IonCardContent>
-          </IonCard>
+                    </IonCardContent>
+                </IonCard>
 
-            <Modal showModal={showCallerDetails}
-                   showExtraButtons={false}
-                   primaryButtonText={"Copy to Clipboard"}
-                   yesAction={showToaster}
-                   closeModal={() => setShowCallerDetails(false)}
-                   bodyText="Phone number: +1 567 890 7656"
-            />
-            <ToastContainer
+                <Modal showModal={showCallerDetails}
+                       showExtraButtons={false}
+                       primaryButtonText={"Copy to Clipboard"}
+                       yesAction={showToaster}
+                       closeModal={() => setShowCallerDetails(false)}
+                       bodyText="Phone number: +1 567 890 7656"
+                />
+                <Modal showModal={showHelpStarted}
+                       showExtraButtons={false}
+                       primaryButtonText={"OK"}
+                       yesAction={closeHelpingModal}
+                       closeModal={closeHelpingModal}
+                       bodyText="You have started helping Alice Hyatt. Please click on 'Finish helping' button once you have finished helping."
+                />
+                <ToastContainer
 
-                position="bottom-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
-            <Modal showModal={showModal}
-                   yesAction={redirectToRating}
-                   primaryButtonText={"Yes"}
-                   noAction={redirectToHome}
-                   showExtraButtons={true}
-                   closeModal={() => setShowModal(false)}
-                   bodyText="Do you want to rate Alice?"
-            />
+                    position="bottom-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
+                <Modal showModal={showModal}
+                       yesAction={redirectToRating}
+                       primaryButtonText={"Yes"}
+                       noAction={redirectToHome}
+                       showExtraButtons={true}
+                       closeModal={() => setShowModal(false)}
+                       bodyText="You have finished helping Alice Hyatt.Do you want to rate Alice?"
+                />
       </IonContent>
       </IonPage>
   )

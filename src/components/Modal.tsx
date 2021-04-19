@@ -9,7 +9,7 @@ type ModalProps = {
     closeModal: () => void,
     bodyText: string,
     showExtraButtons: boolean,
-    primaryButtonText: string
+    primaryButtonText?: string
 }
 
 const Modal = ({showExtraButtons = false, yesAction, primaryButtonText, noAction, showModal, closeModal, bodyText}: ModalProps) => {
