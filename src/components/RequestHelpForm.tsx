@@ -14,6 +14,7 @@ import {
 import './RequestHelpForm.css';
 import {useState} from "react";
 import {useHistory, useParams} from "react-router-dom";
+import {MapContainer} from "./Map";
 
 
 const RequestHelpForm: React.FC = () => {
@@ -49,11 +50,13 @@ const RequestHelpForm: React.FC = () => {
 
         <IonContent>
             <IonList className='request-help-form'>
+                <MapContainer />
                 <IonItem>
                     <IonLabel
                         color="primary"
                         position="floating"
                     >Location *: </IonLabel>
+
                     <IonInput
                         placeholder="Enter your location."
                         value={location}

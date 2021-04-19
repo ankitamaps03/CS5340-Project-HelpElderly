@@ -26,6 +26,7 @@ import Header from "./Header";
 import TopPageHeader from "./TopPageHeader";
 import ButtonForHome from "./ButtonForHome";
 import ButtonForBack from "./ButtonForBack";
+import "../pages/AddRatingElderly.css";
 
 const AddRatingYoung: React.FC = () => {
     let history = useHistory();
@@ -47,13 +48,13 @@ const AddRatingYoung: React.FC = () => {
                 <IonCard style={{height: "100%"}}>
                     <IonCardHeader>
                         <IonCardSubtitle>Rate the helpee.</IonCardSubtitle>
-                        <IonCardTitle>Rate Alice Hyatt</IonCardTitle>
+                        <IonCardTitle className="helper-heading">Rate Alice Hyatt</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
                         <IonGrid>
                             <IonRow>
-                                <IonCol size="3">
-                                    <IonAvatar>
+                                <IonCol size="2">
+                                    <IonAvatar className='avatar'>
                                         <img
                                             src="https://cdn3.vectorstock.com/i/1000x1000/95/22/old-woman-avatar-round-icon-vector-24929522.jpg"/>
                                     </IonAvatar>
@@ -72,7 +73,7 @@ const AddRatingYoung: React.FC = () => {
                         </IonGrid>
                         <IonCardContent>
                             <IonItemDivider style={{width: '100%'}}>
-                                <div>
+                                <div className="helper-details">
                                     <IonLabel>
                                         <IonLabel>Do you want to tell us more about Alice Hyatt?</IonLabel>
                                     </IonLabel>
@@ -85,7 +86,7 @@ const AddRatingYoung: React.FC = () => {
 
                         </IonCardContent>
                         <IonRow>
-                            <IonCol size='6'>
+                            <IonCol size='1'>
                                 <IonButton
                                     onClick={redirectToHome}
                                     color="primary">

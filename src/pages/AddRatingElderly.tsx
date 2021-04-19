@@ -55,7 +55,7 @@ const AddRatingElderly: React.FC = () => {
                         <IonGrid>
                             <IonRow>
                                 <IonCol size="2">
-                                    <IonAvatar style={{width: "160px", height: "160px"}}>
+                                    <IonAvatar className='avatar'>
                                         <img
                                             src="https://e7.pngegg.com/pngimages/999/998/png-clipart-graphics-avatar-mobile-app-website-user-staff-member-head-cartoon.png"/>
                                     </IonAvatar>
